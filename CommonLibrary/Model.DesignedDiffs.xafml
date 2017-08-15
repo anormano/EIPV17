@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="EIPV17">
+<Application>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="17.1.5.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerModuleBase" Version="17.1.5.0" IsNewNode="True" />
     <SchemaModule Name="SystemModule" Version="17.1.5.0" IsNewNode="True" />
   </SchemaModules>
 </Application>

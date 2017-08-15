@@ -19,125 +19,137 @@ using DevExpress.Xpo;
 using DevExpress.Xpo.DB;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.ExpressApp.MiddleTier;
+using CommonLibrary.BusinessObjects.Administration;
 
-namespace EIPV17.ApplicationServer {
-    class Program {
-        static Program() {
-            DevExpress.Persistent.Base.PasswordCryptographer.EnableRfc2898 = true;
-            DevExpress.Persistent.Base.PasswordCryptographer.SupportLegacySha512 = false;
-        }
-        private static void serverApplication_DatabaseVersionMismatch(object sender, DatabaseVersionMismatchEventArgs e) {
-            e.Updater.Update();
-            e.Handled = true;
-        }
-        private static void serverApplication_CreateCustomObjectSpaceProvider(object sender, CreateCustomObjectSpaceProviderEventArgs e) {
-            e.ObjectSpaceProvider = new XPObjectSpaceProvider(e.ConnectionString, e.Connection);
-        }
-        static void Main(string[] args) {
-            try {
-                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+namespace EIPV17.ApplicationServer
+{
+   class Program
+   {
+      static Program()
+      {
+         DevExpress.Persistent.Base.PasswordCryptographer.EnableRfc2898 = true;
+         DevExpress.Persistent.Base.PasswordCryptographer.SupportLegacySha512 = false;
+      }
+      private static void serverApplication_DatabaseVersionMismatch(object sender, DatabaseVersionMismatchEventArgs e)
+      {
+         e.Updater.Update();
+         e.Handled = true;
+      }
+      private static void serverApplication_CreateCustomObjectSpaceProvider(object sender, CreateCustomObjectSpaceProviderEventArgs e)
+      {
+         e.ObjectSpaceProvider = new XPObjectSpaceProvider(e.ConnectionString, e.Connection);
+      }
+      static void Main(string[] args)
+      {
+         try
+         {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-                ValueManager.ValueManagerType = typeof(MultiThreadValueManager<>).GetGenericTypeDefinition();
+            ValueManager.ValueManagerType = typeof(MultiThreadValueManager<>).GetGenericTypeDefinition();
 
-                ServerApplication serverApplication = new ServerApplication();
-                serverApplication.ApplicationName = "EIPV17";
-                serverApplication.CheckCompatibilityType = CheckCompatibilityType.DatabaseSchema;
-                if(System.Diagnostics.Debugger.IsAttached && serverApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
-                    serverApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
-                }
-
-                serverApplication.Modules.BeginInit();
-				serverApplication.Modules.Add(new DevExpress.ExpressApp.Security.SecurityModule());
-                serverApplication.Modules.Add(new EIPV17.Module.EIPV17Module());
-                serverApplication.Modules.Add(new EIPV17.Module.Win.EIPV17WindowsFormsModule());
-                serverApplication.Modules.Add(new EIPV17.Module.Web.EIPV17AspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.AuditTrail.AuditTrailModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Chart.ChartModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Chart.Win.ChartWindowsFormsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Chart.Web.ChartAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.CloneObject.CloneObjectModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Dashboards.DashboardsModule() { DashboardDataType = typeof(DevExpress.Persistent.BaseImpl.DashboardData) });
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Dashboards.Win.DashboardsWindowsFormsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Dashboards.Web.DashboardsAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.FileAttachments.Win.FileAttachmentsWindowsFormsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.HtmlPropertyEditor.Win.HtmlPropertyEditorWindowsFormsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.HtmlPropertyEditor.Web.HtmlPropertyEditorAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Kpi.KpiModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Maps.Web.MapsAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Notifications.NotificationsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Notifications.Win.NotificationsWindowsFormsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Notifications.Web.NotificationsAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotChart.PivotChartModuleBase());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotChart.Win.PivotChartWindowsFormsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotChart.Web.PivotChartAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotGrid.PivotGridModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotGrid.Win.PivotGridWindowsFormsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotGrid.Web.PivotGridAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.ReportsV2.ReportsModuleV2() { ReportDataType = typeof(DevExpress.Persistent.BaseImpl.ReportDataV2) });
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.ReportsV2.Web.ReportsAspNetModuleV2());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Scheduler.SchedulerModuleBase());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Scheduler.Win.SchedulerWindowsFormsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Scheduler.Web.SchedulerAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.ScriptRecorder.ScriptRecorderModuleBase());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.ScriptRecorder.Win.ScriptRecorderWindowsFormsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.ScriptRecorder.Web.ScriptRecorderAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.StateMachine.StateMachineModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.TreeListEditors.Win.TreeListEditorsWindowsFormsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.TreeListEditors.Web.TreeListEditorsAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Validation.ValidationModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Workflow.WorkflowModule());
-                serverApplication.Modules.Add(new DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule());
-                serverApplication.Modules.EndInit();
-
-                serverApplication.DatabaseVersionMismatch += new EventHandler<DatabaseVersionMismatchEventArgs>(serverApplication_DatabaseVersionMismatch);
-                serverApplication.CreateCustomObjectSpaceProvider += new EventHandler<CreateCustomObjectSpaceProviderEventArgs>(serverApplication_CreateCustomObjectSpaceProvider);
-
-                serverApplication.ConnectionString = connectionString;
-
-                Console.WriteLine("Setup...");
-                serverApplication.Setup();
-                Console.WriteLine("CheckCompatibility...");
-                serverApplication.CheckCompatibility();
-                serverApplication.Dispose();
-
-                Console.WriteLine("Starting server...");
-                QueryRequestSecurityStrategyHandler securityProviderHandler = delegate () {
-                    SecurityStrategyComplex securityStrategyComplex = new SecurityStrategyComplex(typeof(PermissionPolicyUser), typeof(PermissionPolicyRole), new AuthenticationStandard());
-                    securityStrategyComplex.SupportNavigationPermissionsForTypes = false;
-                    return securityStrategyComplex;
-                };
-				SecuredDataServer dataServer = new SecuredDataServer(connectionString, XpoTypesInfoHelper.GetXpoTypeInfoSource().XPDictionary, securityProviderHandler);
-                RemoteSecuredDataServer.Initialize(dataServer);
-
-                //"Authentication with the TCP Channel" at http://msdn.microsoft.com/en-us/library/59hafwyt(v=vs.80).aspx
-
-                IDictionary t = new Hashtable();
-                t.Add("port", 1425);
-                t.Add("secure", true);
-                t.Add("impersonate", true);
-
-                TcpChannel channel = new TcpChannel(t, null, null);
-                ChannelServices.RegisterChannel(channel, true);
-                RemotingConfiguration.RegisterWellKnownServiceType(typeof(RemoteSecuredDataServer), "DataServer", WellKnownObjectMode.Singleton);
-                Console.WriteLine("Server is started. Press Enter to stop.");
-                Console.ReadLine();
-                Console.WriteLine("Stopping...");
-                ChannelServices.UnregisterChannel(channel);
-                Console.WriteLine("Server is stopped.");
+            ServerApplication serverApplication = new ServerApplication();
+            serverApplication.ApplicationName = "EIPV17";
+            serverApplication.CheckCompatibilityType = CheckCompatibilityType.DatabaseSchema;
+            if (System.Diagnostics.Debugger.IsAttached && serverApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema)
+            {
+               serverApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
             }
-            catch(Exception e) {
-                Console.WriteLine("Exception occurs: " + e.Message);
-                Console.WriteLine("Press Enter to close.");
-                Console.ReadLine();
-            }
-        }
-    }
+
+            serverApplication.Modules.BeginInit();
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Security.SecurityModule());
+            serverApplication.Modules.Add(new EIPV17.Module.EIPV17Module());
+            serverApplication.Modules.Add(new EIPV17.Module.Win.EIPV17WindowsFormsModule());
+            serverApplication.Modules.Add(new EIPV17.Module.Web.EIPV17AspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.AuditTrail.AuditTrailModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Chart.ChartModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Chart.Win.ChartWindowsFormsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Chart.Web.ChartAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.CloneObject.CloneObjectModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Dashboards.DashboardsModule() { DashboardDataType = typeof(DevExpress.Persistent.BaseImpl.DashboardData) });
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Dashboards.Win.DashboardsWindowsFormsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Dashboards.Web.DashboardsAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.FileAttachments.Win.FileAttachmentsWindowsFormsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.HtmlPropertyEditor.Win.HtmlPropertyEditorWindowsFormsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.HtmlPropertyEditor.Web.HtmlPropertyEditorAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Kpi.KpiModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Maps.Web.MapsAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Notifications.NotificationsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Notifications.Win.NotificationsWindowsFormsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Notifications.Web.NotificationsAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotChart.PivotChartModuleBase());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotChart.Win.PivotChartWindowsFormsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotChart.Web.PivotChartAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotGrid.PivotGridModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotGrid.Win.PivotGridWindowsFormsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.PivotGrid.Web.PivotGridAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.ReportsV2.ReportsModuleV2() { ReportDataType = typeof(DevExpress.Persistent.BaseImpl.ReportDataV2) });
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.ReportsV2.Web.ReportsAspNetModuleV2());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Scheduler.SchedulerModuleBase());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Scheduler.Win.SchedulerWindowsFormsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Scheduler.Web.SchedulerAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.ScriptRecorder.ScriptRecorderModuleBase());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.ScriptRecorder.Win.ScriptRecorderWindowsFormsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.ScriptRecorder.Web.ScriptRecorderAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.StateMachine.StateMachineModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.TreeListEditors.Win.TreeListEditorsWindowsFormsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.TreeListEditors.Web.TreeListEditorsAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Validation.ValidationModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Workflow.WorkflowModule());
+            serverApplication.Modules.Add(new DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule());
+            serverApplication.Modules.EndInit();
+
+            serverApplication.DatabaseVersionMismatch += new EventHandler<DatabaseVersionMismatchEventArgs>(serverApplication_DatabaseVersionMismatch);
+            serverApplication.CreateCustomObjectSpaceProvider += new EventHandler<CreateCustomObjectSpaceProviderEventArgs>(serverApplication_CreateCustomObjectSpaceProvider);
+
+            serverApplication.ConnectionString = connectionString;
+
+            Console.WriteLine("Setup...");
+            serverApplication.Setup();
+            Console.WriteLine("CheckCompatibility...");
+            serverApplication.CheckCompatibility();
+            serverApplication.Dispose();
+
+            Console.WriteLine("Starting server...");
+            QueryRequestSecurityStrategyHandler securityProviderHandler = delegate ()
+            {
+               SecurityStrategyComplex security = new SecurityStrategyComplex(
+        typeof(Employee), typeof(EmployeeRole), new AuthenticationStandard());
+               //securityStrategyComplex.SupportNavigationPermissionsForTypes = false;
+               return security;
+            };
+            SecuredDataServer dataServer = new SecuredDataServer(connectionString, XpoTypesInfoHelper.GetXpoTypeInfoSource().XPDictionary, securityProviderHandler);
+            RemoteSecuredDataServer.Initialize(dataServer);
+
+            //"Authentication with the TCP Channel" at http://msdn.microsoft.com/en-us/library/59hafwyt(v=vs.80).aspx
+
+            IDictionary t = new Hashtable();
+            t.Add("port", 1425);
+            t.Add("secure", true);
+            t.Add("impersonate", true);
+
+            TcpChannel channel = new TcpChannel(t, null, null);
+            ChannelServices.RegisterChannel(channel, true);
+            RemotingConfiguration.RegisterWellKnownServiceType(typeof(RemoteSecuredDataServer), "DataServer", WellKnownObjectMode.Singleton);
+            Console.WriteLine("Server is started. Press Enter to stop.");
+            Console.ReadLine();
+            Console.WriteLine("Stopping...");
+            ChannelServices.UnregisterChannel(channel);
+            Console.WriteLine("Server is stopped.");
+         }
+         catch (Exception e)
+         {
+            Console.WriteLine("Exception occurs: " + e.Message);
+            Console.WriteLine("Press Enter to close.");
+            Console.ReadLine();
+         }
+      }
+   }
 }
