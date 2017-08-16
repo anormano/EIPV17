@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EIPV17.ApplicationServer", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{CE7926A9-60FF-4C9A-AE27-2D7499F27349}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoLibrary", "DemoLibrary\DemoLibrary.csproj", "{87BC865B-E978-44DF-90A2-86352E0E9F86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +84,12 @@ Global
 		{CE7926A9-60FF-4C9A-AE27-2D7499F27349}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{CE7926A9-60FF-4C9A-AE27-2D7499F27349}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE7926A9-60FF-4C9A-AE27-2D7499F27349}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BC865B-E978-44DF-90A2-86352E0E9F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BC865B-E978-44DF-90A2-86352E0E9F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BC865B-E978-44DF-90A2-86352E0E9F86}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{87BC865B-E978-44DF-90A2-86352E0E9F86}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{87BC865B-E978-44DF-90A2-86352E0E9F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BC865B-E978-44DF-90A2-86352E0E9F86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

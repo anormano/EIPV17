@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application>
+<Application Company="Aturable.com" Copyright="Copyright © 2017 Aturable Solution, All Rights Reserved" Title="CIPortal">
   <NavigationItems>
     <Items>
       <Item Id="Default" IsNewNode="True">
