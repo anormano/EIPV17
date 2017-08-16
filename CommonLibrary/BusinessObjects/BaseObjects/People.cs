@@ -12,6 +12,8 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using static CommonLibrary.BusinessObjects.BaseObjects.EnumLibrary;
+using DevExpress.ExpressApp.Editors;
+using CommonLibrary.BusinessObjects.Areas;
 
 namespace CommonLibrary.BusinessObjects.BaseObjects
 {
@@ -133,6 +135,80 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
          set
          {
             SetPropertyValue("Gender", ref gender, value);
+         }
+      }
+
+      string address;
+      [EditorAlias(EditorAliases.StringPropertyEditor)]
+      [Size(SizeAttribute.Unlimited)]
+      [ModelDefault("RowCount", "3")]
+      public string Address
+      {
+         get
+         {
+            return address;
+         }
+         set
+         {
+            SetPropertyValue("Address", ref address, value);
+         }
+      }
+
+      CommonLibrary.BusinessObjects.Areas.Country country;
+      [ImmediatePostData]
+      public CommonLibrary.BusinessObjects.Areas.Country Country
+      {
+         get
+         {
+            return country;
+         }
+         set
+         {
+            SetPropertyValue("Country", ref country, value);
+         }
+      }
+
+      Province province;
+      [ImmediatePostData]
+      [DataSourceProperty("Country.Provinces")]
+      public Province Province
+      {
+         get
+         {
+            return province;
+         }
+         set
+         {
+            SetPropertyValue("Province", ref province, value);
+         }
+      }
+
+      District district;
+      [ImmediatePostData]
+      [DataSourceProperty("Province.Districts")]
+      public District District
+      {
+         get
+         {
+            return district;
+         }
+         set
+         {
+            SetPropertyValue("District", ref district, value);
+         }
+      }
+
+      SubDistrict subDistrict;
+      [DataSourceProperty("District.SubDistricts")]
+      public SubDistrict SubDistrict
+      {
+         get
+         {
+            return subDistrict;
+         }
+         set
+         {
+            SetPropertyValue("SubDistrict", ref subDistrict, value);
          }
       }
    }

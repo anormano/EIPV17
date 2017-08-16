@@ -198,6 +198,7 @@
       <DependentUpon>MobileModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EIPV17.Module\EIPV17.Module.csproj">

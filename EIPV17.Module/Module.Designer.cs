@@ -57,6 +57,7 @@
          this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule));
          this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Workflow.WorkflowModule));
          this.RequiredModuleTypes.Add(typeof(CommonLibrary.CommonLibraryModule));
+         this.RequiredModuleTypes.Add(typeof(DemoLibrary.DemoLibraryModule));
 
 		}
 
