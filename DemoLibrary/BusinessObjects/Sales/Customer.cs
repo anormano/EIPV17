@@ -46,5 +46,14 @@ namespace DemoLibrary.BusinessObjects.Sales
       //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
       //    this.PersistentProperty = "Paid";
       //}
+
+      [Association("Customer-Notes"), DevExpress.Xpo.Aggregated]
+      public XPCollection<CustomerNote> Notes
+      {
+         get
+         {
+            return GetCollection<CustomerNote>("Notes");
+         }
+      }
    }
 }

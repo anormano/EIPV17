@@ -11,19 +11,21 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
-using DevExpress.ExpressApp.Editors;
+using DemoLibrary.BusinessObjects.Other;
 
 namespace DemoLibrary.BusinessObjects.Products
 {
    [DefaultClassOptions]
-   [ImageName("BO_Product")]
+   [NavigationItem(false)]
+   [CreatableItem(false)]
+   //[ImageName("BO_Contact")]
    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
    //[Persistent("DatabaseTableName")]
    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-   public class Product : BaseObject
+   public class ProductNote : NoteBase
    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-      public Product(Session session)
+      public ProductNote(Session session)
           : base(session)
       {
       }
@@ -46,83 +48,20 @@ namespace DemoLibrary.BusinessObjects.Products
       //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
       //    this.PersistentProperty = "Paid";
       //}
-      string name;
-      [Size(SizeAttribute.DefaultStringMappingFieldSize)]
-      [RuleRequiredField]
-      public string Name
+
+      Product product;
+      [Association("Product-Notes")]
+      public Product Product
       {
          get
          {
-            return name;
+            return product;
          }
          set
          {
-            SetPropertyValue("Name", ref name, value);
+            SetPropertyValue("Product", ref product, value);
          }
       }
 
-      ProductCategory category;
-      [Association("ProductCategory-Products")]
-      public ProductCategory Category
-      {
-         get
-         {
-            return category;
-         }
-         set
-         {
-            SetPropertyValue("Category", ref category, value);
-         }
-      }
-
-      decimal price;
-      public decimal Price
-      {
-         get
-         {
-            return price;
-         }
-         set
-         {
-            SetPropertyValue("Price", ref price, value);
-         }
-      }
-
-      MediaDataObject image;
-      public MediaDataObject Image
-      {
-         get
-         {
-            return image;
-         }
-         set
-         {
-            SetPropertyValue("Image", ref image, value);
-         }
-      }
-
-      string description;
-      [Size(SizeAttribute.Unlimited)]
-      [EditorAlias(EditorAliases.HtmlPropertyEditor)]
-      public string Description
-      {
-         get
-         {
-            return description;
-         }
-         set
-         {
-            SetPropertyValue("Description", ref description, value);
-         }
-      }
-
-      [Association("Product-Notes"), DevExpress.Xpo.Aggregated]
-      public XPCollection<ProductNote> Notes
-      {
-         get
-         {
-            return GetCollection<ProductNote>("Notes");
-         }
-      }
    }
 }
