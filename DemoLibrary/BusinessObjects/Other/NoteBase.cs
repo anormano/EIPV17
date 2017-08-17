@@ -12,18 +12,22 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using DevExpress.ExpressApp.Editors;
+using CommonLibrary.BusinessObjects.Administration;
 
-namespace DemoLibrary.BusinessObjects.Products
+namespace DemoLibrary.BusinessObjects.Other
 {
    [DefaultClassOptions]
-   [ImageName("BO_Product")]
-   //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
+   [ImageName("BO_Note")]
+   [DefaultProperty("Subject")]
+   [FileAttachment("Attachment")]
+   [CreatableItem(false)]
+   [NavigationItem(false)]
    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
    //[Persistent("DatabaseTableName")]
    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-   public class Product : BaseObject
+   public class NoteBase : BaseObject
    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-      public Product(Session session)
+      public NoteBase(Session session)
           : base(session)
       {
       }
@@ -31,6 +35,8 @@ namespace DemoLibrary.BusinessObjects.Products
       {
          base.AfterConstruction();
          // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
+         Date = DateTime.Now;
+         Owner = Session.GetObjectByKey<Employee>(SecuritySystem.CurrentUserId);
       }
       //private string _PersistentProperty;
       //[XafDisplayName("My display name"), ToolTip("My hint message")]
@@ -46,82 +52,73 @@ namespace DemoLibrary.BusinessObjects.Products
       //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
       //    this.PersistentProperty = "Paid";
       //}
-      string name;
+
+      string subject;
       [Size(SizeAttribute.DefaultStringMappingFieldSize)]
       [RuleRequiredField]
-      public string Name
+      public string Subject
       {
          get
          {
-            return name;
+            return subject;
          }
          set
          {
-            SetPropertyValue("Name", ref name, value);
+            SetPropertyValue("Subject", ref subject, value);
          }
       }
 
-      ProductCategory category;
-      [Association("ProductCategory-Products")]
-      public ProductCategory Category
+      DateTime date;
+      public DateTime Date
       {
          get
          {
-            return category;
+            return date;
          }
          set
          {
-            SetPropertyValue("Category", ref category, value);
+            SetPropertyValue("Date", ref date, value);
          }
       }
 
-      decimal price;
-      public decimal Price
+      Employee owner;
+      public Employee Owner
       {
          get
          {
-            return price;
+            return owner;
          }
          set
          {
-            SetPropertyValue("Price", ref price, value);
+            SetPropertyValue("Owner", ref owner, value);
          }
       }
 
-      MediaDataObject image;
-      public MediaDataObject Image
-      {
-         get
-         {
-            return image;
-         }
-         set
-         {
-            SetPropertyValue("Image", ref image, value);
-         }
-      }
-
-      string description;
+      string note;
       [Size(SizeAttribute.Unlimited)]
       [EditorAlias(EditorAliases.HtmlPropertyEditor)]
-      public string Description
+      public string Note
       {
          get
          {
-            return description;
+            return note;
          }
          set
          {
-            SetPropertyValue("Description", ref description, value);
+            SetPropertyValue("Note", ref note, value);
          }
       }
 
-      [Association("Product-Notes"), DevExpress.Xpo.Aggregated]
-      public XPCollection<ProductNote> Notes
+      FileData attachment;
+      public FileData Attachment
       {
          get
          {
-            return GetCollection<ProductNote>("Notes");
+            return attachment;
+         }
+         set
+         {
+            SetPropertyValue("Attachment", ref attachment, value);
          }
       }
    }

@@ -97,9 +97,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\Other\NoteBase.cs" />
     <Compile Include="BusinessObjects\Products\Product.cs" />
     <Compile Include="BusinessObjects\Products\ProductCategory.cs" />
+    <Compile Include="BusinessObjects\Products\ProductNote.cs" />
     <Compile Include="BusinessObjects\Sales\Customer.cs" />
+    <Compile Include="BusinessObjects\Sales\CustomerNote.cs" />
     <Compile Include="BusinessObjects\Sales\Invoice.cs" />
     <Compile Include="BusinessObjects\Sales\SaleItem.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
