@@ -16,9 +16,11 @@ using DemoLibrary.BusinessObjects.Products;
 namespace DemoLibrary.BusinessObjects.Sales
 {
    [DefaultClassOptions]
-   //[ImageName("BO_Contact")]
+   [ImageName("BO_Sale_Item")]
    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-   //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
+   [NavigationItem(false)]
+   [CreatableItem(false)]
+   [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Top)]
    //[Persistent("DatabaseTableName")]
    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
    public class SaleItem : BaseObject
@@ -89,6 +91,7 @@ namespace DemoLibrary.BusinessObjects.Sales
       }
 
       [PersistentAlias("Product.Price * Quantity")]
+      [ModelDefault("DisplayFormat", "n2")]
       public decimal? Amount
       {
          get

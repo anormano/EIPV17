@@ -16,6 +16,7 @@ using DevExpress.Persistent.BaseImpl.PermissionPolicy;
 namespace CommonLibrary.BusinessObjects.Administration
 {
    [DefaultClassOptions, ImageName("BO_Role")]
+   [NavigationItem("Administration")]
    //[ImageName("BO_Contact")]
    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]

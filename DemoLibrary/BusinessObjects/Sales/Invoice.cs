@@ -16,8 +16,8 @@ using CommonLibrary.BusinessObjects.Administration;
 namespace DemoLibrary.BusinessObjects.Sales
 {
    [DefaultClassOptions]
-   //[ImageName("BO_Contact")]
-   //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
+   [ImageName("BO_Invoice")]
+   [DefaultProperty("Name")]
    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
    //[Persistent("DatabaseTableName")]
    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
@@ -31,6 +31,7 @@ namespace DemoLibrary.BusinessObjects.Sales
       {
          base.AfterConstruction();
          // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
+         InvoiceDate = DateTime.Now;
       }
       //private string _PersistentProperty;
       //[XafDisplayName("My display name"), ToolTip("My hint message")]
@@ -47,9 +48,9 @@ namespace DemoLibrary.BusinessObjects.Sales
       //    this.PersistentProperty = "Paid";
       //}
       int iD;
-      [Key]
-      [RuleRequiredField]
-      [RuleUniqueValue]
+      [Key(AutoGenerate = true)]
+      [ModelDefault("DisplayFormat", "0000000")]
+      [VisibleInDetailView(true), VisibleInListView(true)]
       public int ID
       {
          get
@@ -72,6 +73,20 @@ namespace DemoLibrary.BusinessObjects.Sales
          set
          {
             SetPropertyValue("Name", ref name, value);
+         }
+      }
+
+      DateTime invoiceDate;
+      [RuleRequiredField]
+      public DateTime InvoiceDate
+      {
+         get
+         {
+            return invoiceDate;
+         }
+         set
+         {
+            SetPropertyValue("InvoiceDate", ref invoiceDate, value);
          }
       }
 
@@ -102,6 +117,8 @@ namespace DemoLibrary.BusinessObjects.Sales
       }
 
       [PersistentAlias("SaleItems.Sum(Amount)")]
+      [ModelDefault("DisplayFormat", "n2")]
+      [ModelDefault("EditMask", "n2")]
       public decimal DetailAmount
       {
          get
@@ -117,6 +134,8 @@ namespace DemoLibrary.BusinessObjects.Sales
       }
 
       decimal discountAmount;
+      [ModelDefault("DisplayFormat", "n2")]
+      [ModelDefault("EditMask", "n2")]
       public decimal DiscountAmount
       {
          get
@@ -130,6 +149,8 @@ namespace DemoLibrary.BusinessObjects.Sales
       }
 
       decimal discountPercent;
+      [ModelDefault("DisplayFormat", "{0:n2}%")]
+      [ModelDefault("EditMask", "n2")]
       public decimal DiscountPercent
       {
          get
@@ -143,6 +164,8 @@ namespace DemoLibrary.BusinessObjects.Sales
       }
 
       [PersistentAlias("(DetailAmount - DiscountAmount) - ((DetailAmount - DiscountAmount) * (DiscountPercent/100))")]
+      [ModelDefault("DisplayFormat", "n2")]
+      [ModelDefault("EditMask", "n2")]
       public decimal Amount
       {
          get

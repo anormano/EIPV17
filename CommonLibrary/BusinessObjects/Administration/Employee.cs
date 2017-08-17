@@ -18,9 +18,10 @@ using DevExpress.Persistent.Base.Security;
 namespace CommonLibrary.BusinessObjects.Administration
 {
    [DefaultClassOptions]
+   [NavigationItem("Administration")]
    //[ImageName("BO_Contact")]
    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-   //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
+   [DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
    //[Persistent("DatabaseTableName")]
    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
    public class Employee : People, ISecurityUser, IAuthenticationStandardUser, IAuthenticationActiveDirectoryUser, ISecurityUserWithRoles, IPermissionPolicyUser, ICanInitialize
@@ -48,6 +49,7 @@ namespace CommonLibrary.BusinessObjects.Administration
       //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
       //    this.PersistentProperty = "Paid";
       //}
+
       #region ISecurityUser Members
       private bool isActive = true;
       public bool IsActive
@@ -65,6 +67,7 @@ namespace CommonLibrary.BusinessObjects.Administration
          set { SetPropertyValue("UserName", ref userName, value); }
       }
       #endregion
+
       #region IAuthenticationStandardUser Members
       private bool changePasswordOnFirstLogon;
       public bool ChangePasswordOnFirstLogon
@@ -92,6 +95,7 @@ namespace CommonLibrary.BusinessObjects.Administration
          OnChanged("StoredPassword");
       }
       #endregion
+
       #region ISecurityUserWithRoles Members
       IList<ISecurityRole> ISecurityUserWithRoles.Roles
       {
@@ -106,6 +110,7 @@ namespace CommonLibrary.BusinessObjects.Administration
          }
       }
       #endregion
+
       #region IPermissionPolicyUser Members
       IEnumerable<IPermissionPolicyRole> IPermissionPolicyUser.Roles
       {

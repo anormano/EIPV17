@@ -16,7 +16,7 @@ using CommonLibrary.BusinessObjects.BaseObjects;
 namespace DemoLibrary.BusinessObjects.Sales
 {
    [DefaultClassOptions]
-   //[ImageName("BO_Contact")]
+   [ImageName("BO_Contact")]
    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
    //[Persistent("DatabaseTableName")]
