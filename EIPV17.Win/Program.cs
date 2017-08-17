@@ -31,7 +31,6 @@ namespace EIPV17.Win {
             }
 			Tracing.Initialize();
             EIPV17WindowsFormsApplication winApplication = new EIPV17WindowsFormsApplication();
-         //winApplication.CreateCustomTemplate += WinApplication_CreateCustomTemplate;
             // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
             //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
 			SecurityAdapterHelper.Enable();
@@ -59,11 +58,5 @@ namespace EIPV17.Win {
                 winApplication.HandleException(e);
             }
         }
-
-      //private static void WinApplication_CreateCustomTemplate(object sender, CreateCustomTemplateEventArgs e)
-      //{
-      //   if (e.Context == TemplateContext.ApplicationWindow)
-      //      e.Template = new EIPV17.Module.Win.Templates.MainRibbonFormTemplate();
-      //}
-   }
+    }
 }
