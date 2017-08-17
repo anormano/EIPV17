@@ -10,9 +10,19 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
    {
       public enum Gender
       {
-         Undifined,
+         Undefined,
          Male,
          Female
       }
+
+      public enum MaritalStatus
+      {
+         Undefined,
+         Single,
+         Maried,
+         Divorced,
+         Widowed
+      }
+
    }
 }

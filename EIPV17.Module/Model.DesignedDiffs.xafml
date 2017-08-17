@@ -1,5 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="EIPV17">
+<Application Title="Aturable.com Demo Apps" Company="Aturable.com" Copyright="Copyright (c) 2017 Aturable.com, All Rights Reserved">
+  <NavigationItems>
+    <Items>
+      <Item Id="Default" Index="0" Caption="Workspace">
+        <Items>
+          <Item Id="Event_ListView" Index="0" />
+          <Item Id="Invoice_ListView" Index="1" />
+          <Item Id="Customer_ListView" Index="2" />
+          <Item Id="Product_ListView" Index="3" />
+          <Item Id="ProductCategory_ListView" Index="4" />
+        </Items>
+      </Item>
+      <Item Id="Administration">
+        <Items>
+          <Item Id="Employee_ListView" Index="0" />
+          <Item Id="EmployeeRole_ListView" Index="1" />
+          <Item Id="Country_ListView" Index="2" />
+          <Item Id="Province_ListView" Index="3" />
+          <Item Id="District_ListView" Index="4" />
+          <Item Id="SubDistrict_ListView" Index="5" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>

@@ -15,7 +15,8 @@ using DevExpress.Persistent.Validation;
 namespace CommonLibrary.BusinessObjects.Areas
 {
    [DefaultClassOptions]
-   //[ImageName("BO_Contact")]
+   [NavigationItem("Administration")]
+   [ImageName("BO_Map")]
    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
    //[Persistent("DatabaseTableName")]

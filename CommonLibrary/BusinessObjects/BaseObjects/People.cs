@@ -49,6 +49,7 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
       //    this.PersistentProperty = "Paid";
       //}
       [PersistentAlias("Concat([FirstName], ' ', [LastName])")]
+      [VisibleInListView(true), VisibleInDetailView(false)]
       public string DisplayName
       {
          get
@@ -58,6 +59,7 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
       }
 
       string firstName;
+      [VisibleInListView(false)]
       [Size(SizeAttribute.DefaultStringMappingFieldSize), ImmediatePostData(true)]
       public string FirstName
       {
@@ -72,6 +74,7 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
       }
 
       string lastName;
+      [VisibleInListView(false)]
       [Size(SizeAttribute.DefaultStringMappingFieldSize), ImmediatePostData(true)]
       public string LastName
       {
@@ -86,6 +89,7 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
       }
 
       DateTime birthDate;
+      [VisibleInListView(false)]
       public DateTime BirthDate
       {
          get
@@ -99,6 +103,7 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
       }
 
       string birthPlace;
+      [VisibleInListView(false)]
       [Size(SizeAttribute.DefaultStringMappingFieldSize)]
       public string BirthPlace
       {
@@ -113,6 +118,8 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
       }
 
       MediaDataObject photo;
+      [VisibleInListView(true)]
+      [ImageEditor(ListViewImageEditorCustomHeight = 80, DetailViewImageEditorMode = ImageEditorMode.PictureEdit, DetailViewImageEditorFixedHeight = 200)]
       public MediaDataObject Photo
       {
          get
@@ -126,6 +133,7 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
       }
 
       Gender gender;
+      [VisibleInListView(false)]
       public Gender Gender
       {
          get
@@ -138,7 +146,66 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
          }
       }
 
+      MaritalStatus maritalStatus;
+      [VisibleInListView(false)]
+      public MaritalStatus MaritalStatus
+      {
+         get
+         {
+            return maritalStatus;
+         }
+         set
+         {
+            SetPropertyValue("MaritalStatus", ref maritalStatus, value);
+         }
+      }
+
+      string spouseName;
+      [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+      [VisibleInListView(false)]
+      public string SpouseName
+      {
+         get
+         {
+            return spouseName;
+         }
+         set
+         {
+            SetPropertyValue("SpouseName", ref spouseName, value);
+         }
+      }
+
+      DateTime anniversary;
+      [VisibleInListView(false)]
+      public DateTime Anniversary
+      {
+         get
+         {
+            return anniversary;
+         }
+         set
+         {
+            SetPropertyValue("Anniversary", ref anniversary, value);
+         }
+      }
+
+      string jobTitle;
+      [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+      [VisibleInListView(false)]
+      public string JobTitle
+      {
+         get
+         {
+            return jobTitle;
+         }
+         set
+         {
+            SetPropertyValue("JobTitle", ref jobTitle, value);
+         }
+      }
+
       string address;
+      [VisibleInListView(false)]
       [EditorAlias(EditorAliases.StringPropertyEditor)]
       [Size(SizeAttribute.Unlimited)]
       [ModelDefault("RowCount", "3")]
@@ -156,6 +223,7 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
 
       CommonLibrary.BusinessObjects.Areas.Country country;
       [ImmediatePostData]
+      [VisibleInListView(false)]
       public CommonLibrary.BusinessObjects.Areas.Country Country
       {
          get
@@ -170,6 +238,7 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
 
       Province province;
       [ImmediatePostData]
+      [VisibleInListView(false)]
       [DataSourceProperty("Country.Provinces")]
       public Province Province
       {
@@ -185,6 +254,7 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
 
       District district;
       [ImmediatePostData]
+      [VisibleInListView(false)]
       [DataSourceProperty("Province.Districts")]
       public District District
       {
@@ -200,6 +270,7 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
 
       SubDistrict subDistrict;
       [DataSourceProperty("District.SubDistricts")]
+      [VisibleInListView(false)]
       public SubDistrict SubDistrict
       {
          get
@@ -209,6 +280,89 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
          set
          {
             SetPropertyValue("SubDistrict", ref subDistrict, value);
+         }
+      }
+
+      string email;
+      [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+      public string Email
+      {
+         get
+         {
+            return email;
+         }
+         set
+         {
+            SetPropertyValue("Email", ref email, value);
+         }
+      }
+
+      string officePhone;
+      [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+      public string OfficePhone
+      {
+         get
+         {
+            return officePhone;
+         }
+         set
+         {
+            SetPropertyValue("OfficePhone", ref officePhone, value);
+         }
+      }
+
+      string homePhone;
+      [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+      public string HomePhone
+      {
+         get
+         {
+            return homePhone;
+         }
+         set
+         {
+            SetPropertyValue("HomePhone", ref homePhone, value);
+         }
+      }
+
+      string mobilePhone;
+      [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+      public string MobilePhone
+      {
+         get
+         {
+            return mobilePhone;
+         }
+         set
+         {
+            SetPropertyValue("MobilePhone", ref mobilePhone, value);
+         }
+      }
+      string fax;
+      [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+      public string Fax
+      {
+         get
+         {
+            return fax;
+         }
+         set
+         {
+            SetPropertyValue("Fax", ref fax, value);
+         }
+      }
+
+      string otherPhone;
+      [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+      public string OtherPhone
+      {
+         get
+         {
+            return otherPhone;
+         }
+         set
+         {
+            SetPropertyValue("OtherPhone", ref otherPhone, value);
          }
       }
    }
