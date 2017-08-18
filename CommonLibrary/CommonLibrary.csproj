@@ -111,7 +111,6 @@
   <ItemGroup>
     <Compile Include="BusinessObjects\Administration\Employee.cs" />
     <Compile Include="BusinessObjects\Administration\EmployeeRole.cs" />
-    <Compile Include="BusinessObjects\Areas\Area.cs" />
     <Compile Include="BusinessObjects\Areas\Country.cs" />
     <Compile Include="BusinessObjects\Areas\District.cs" />
     <Compile Include="BusinessObjects\Areas\Province.cs" />
