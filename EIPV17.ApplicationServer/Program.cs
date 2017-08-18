@@ -139,7 +139,7 @@ namespace EIPV17.ApplicationServer
             ChannelServices.RegisterChannel(channel, true);
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(RemoteSecuredDataServer), "DataServer", WellKnownObjectMode.Singleton);
             Console.WriteLine("Server is started. Press Enter to stop.");
-            Console.ReadLine();
+             Console.ReadLine();
             Console.WriteLine("Stopping...");
             ChannelServices.UnregisterChannel(channel);
             Console.WriteLine("Server is stopped.");
