@@ -12,6 +12,7 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using CommonLibrary.BusinessObjects.BaseObjects;
+using CommonLibrary.BusinessObjects.Administration;
 
 namespace DemoLibrary.BusinessObjects.Sales
 {
@@ -32,22 +33,36 @@ namespace DemoLibrary.BusinessObjects.Sales
          base.AfterConstruction();
          // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
       }
-      //private string _PersistentProperty;
-      //[XafDisplayName("My display name"), ToolTip("My hint message")]
-      //[ModelDefault("EditMask", "(000)-00"), Index(0), VisibleInListView(false)]
-      //[Persistent("DatabaseColumnName"), RuleRequiredField(DefaultContexts.Save)]
-      //public string PersistentProperty {
-      //    get { return _PersistentProperty; }
-      //    set { SetPropertyValue("PersistentProperty", ref _PersistentProperty, value); }
-      //}
+        //private string _PersistentProperty;
+        //[XafDisplayName("My display name"), ToolTip("My hint message")]
+        //[ModelDefault("EditMask", "(000)-00"), Index(0), VisibleInListView(false)]
+        //[Persistent("DatabaseColumnName"), RuleRequiredField(DefaultContexts.Save)]
+        //public string PersistentProperty {
+        //    get { return _PersistentProperty; }
+        //    set { SetPropertyValue("PersistentProperty", ref _PersistentProperty, value); }
+        //}
 
-      //[Action(Caption = "My UI Action", ConfirmationMessage = "Are you sure?", ImageName = "Attention", AutoCommit = true)]
-      //public void ActionMethod() {
-      //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
-      //    this.PersistentProperty = "Paid";
-      //}
+        //[Action(Caption = "My UI Action", ConfirmationMessage = "Are you sure?", ImageName = "Attention", AutoCommit = true)]
+        //public void ActionMethod() {
+        //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
+        //    this.PersistentProperty = "Paid";
+        //}
 
-      [Association("Customer-Notes"), DevExpress.Xpo.Aggregated]
+        Employee owner;
+        [VisibleInLookupListView(true)]
+        public Employee Owner
+        {
+            get
+            {
+                return owner;
+            }
+            set
+            {
+                SetPropertyValue("Owner", ref owner, value);
+            }
+        }
+
+        [Association("Customer-Notes"), DevExpress.Xpo.Aggregated]
       public XPCollection<CustomerNote> Notes
       {
          get

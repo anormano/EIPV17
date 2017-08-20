@@ -70,7 +70,7 @@ namespace EIPV17.Win
       private static void WinApplication_CreateCustomTemplate(object sender, CreateCustomTemplateEventArgs e)
       {
          if (e.Context == TemplateContext.ApplicationWindow)
-            e.Template = new EIPV17.Module.Win.Templates.OutlookStyleMainRibbonFormTemplate();
+            e.Template = new EIPV17.Module.Win.Templates.OutlookStyleMainRibbonForm();
       }
    }
 }

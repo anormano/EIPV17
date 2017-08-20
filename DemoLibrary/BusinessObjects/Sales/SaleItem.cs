@@ -20,7 +20,7 @@ namespace DemoLibrary.BusinessObjects.Sales
    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
    [NavigationItem(false)]
    [CreatableItem(false)]
-   [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Top)]
+   [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Bottom)]
    //[Persistent("DatabaseTableName")]
    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
    public class SaleItem : BaseObject
