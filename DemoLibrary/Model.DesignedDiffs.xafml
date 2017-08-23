@@ -81,5 +81,14 @@
         <ColumnInfo Id="DisplayName" Index="1" />
       </Columns>
     </ListView>
+    <ListView Id="Invoice_SaleItems_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Amount">
+          <Summary>
+            <ColumnSummaryItem Id="@ccc5e958-72fe-4b10-831a-fb9fb3601a4d" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
   </Views>
 </Application>

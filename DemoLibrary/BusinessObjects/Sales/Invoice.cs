@@ -189,6 +189,7 @@ namespace DemoLibrary.BusinessObjects.Sales
         }
 
         [Association("Invoice-SaleItems"), DevExpress.Xpo.Aggregated]
+        [ImmediatePostData]
         public XPCollection<SaleItem> SaleItems
         {
             get
