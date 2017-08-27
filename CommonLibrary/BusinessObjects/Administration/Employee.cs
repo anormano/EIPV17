@@ -19,6 +19,7 @@ namespace CommonLibrary.BusinessObjects.Administration
 {
    [DefaultClassOptions]
    [NavigationItem("Administration")]
+   [CurrentUserDisplayImage("Photo")]
    //[ImageName("BO_Contact")]
    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
    [DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
