@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
 <div class="LogonTemplate">
     <xaf:XafUpdatePanel ID="UPPopupWindowControl" runat="server">
-        <xaf:XafPopupWindowControl runat="server" id="PopupWindowControl" />
+        <xaf:XafPopupWindowControl runat="server" ID="PopupWindowControl" />
     </xaf:XafUpdatePanel>
     <xaf:XafUpdatePanel ID="UPHeader" runat="server">
         <div class="white borderBottom width100" id="headerTableDiv">
@@ -20,7 +20,7 @@
                         <tr>
                             <td>
                                 <asp:HyperLink runat="server" NavigateUrl="#" ID="LogoLink">
-                                    <xaf:ThemedImageControl id="TIC" defaultthemeimagelocation="Images" imagename="Logo.png" borderwidth="0px" runat="server" />
+                                    <xaf:ThemedImageControl ID="TIC" DefaultThemeImageLocation="Images" ImageName="Logo.png" BorderWidth="0px" runat="server" />
                                 </asp:HyperLink>
                             </td>
                         </tr>
@@ -50,12 +50,17 @@
 
                                 <xaf:XafUpdatePanel ID="UPPopupActions" runat="server" CssClass="right">
                                     <xaf:ActionContainerHolder ID="PopupActions" runat="server" Orientation="Horizontal" ContainerStyle="Buttons">
-                                        <Menu width="100%" ItemAutoWidth="False" />
+                                        <Menu Width="100%" ItemAutoWidth="False" />
                                         <ActionContainers>
-                        <xaf:WebActionContainer ContainerId="PopupActions" />
-                    </ActionContainers>
+                                            <xaf:WebActionContainer ContainerId="PopupActions" />
+                                        </ActionContainers>
                                     </xaf:ActionContainerHolder>
                                 </xaf:XafUpdatePanel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                This is a demonstration site, to enter use &quot;Admin&quot; or &quot;User&quot; with empty password.
                             </td>
                         </tr>
                     </table>

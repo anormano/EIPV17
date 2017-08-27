@@ -46,7 +46,7 @@ namespace EIPV17.Web {
 			//DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit();
             WebApplication.Instance.Settings.DefaultVerticalTemplateContentPath = "DefaultVerticalTemplateContent.ascx";
             WebApplication.Instance.Settings.LogonTemplateContentPath = "CustomLogonTemplateContent.ascx";
-            DefaultVerticalTemplateContent.ClearSizeLimit();
+            //DefaultVerticalTemplateContent.ClearSizeLimit();
             WebApplication.Instance.SwitchToNewStyle();
             WebApplication.Instance.Setup();
 			WebApplication.Instance.Start();

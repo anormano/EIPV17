@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="id-ID">
+  <Title Text="Sales Overview" />
+  <DataSources>
+    <ObjectDataSource ComponentName="dashboardObjectDataSource1">
+      <Name>Object Data Source 1</Name>
+      <DataSource Type="DemoLibrary.BusinessObjects.Sales.SaleItem, DemoLibrary, Version=1.0.6448.33491, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Sales by Category" DataSource="dashboardObjectDataSource1">
+      <InteractivityOptions MasterFilterMode="Single" />
+      <DataItems>
+        <Dimension DataMember="Invoice.InvoiceDate" DateTimeGroupInterval="QuarterYear" DefaultId="DataItem0" />
+        <Measure DataMember="Amount" Name="Trend" DefaultId="DataItem1" />
+        <Dimension DataMember="Product.Category.Name" Name="Category Name" DefaultId="DataItem2" />
+        <Measure DataMember="Amount" Name="Amount" DefaultId="DataItem3" />
+        <Measure DataMember="Quantity" Name="Quantity" DefaultId="DataItem4" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </HiddenDimensions>
+      <FormatRules>
+        <GridItemFormatRule Name="FormatRule 1" DataItem="DataItem4">
+          <FormatConditionRangeSet ValueType="Percent">
+            <RangeSet>
+              <Ranges>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="0" />
+                  <IconSettings IconType="Rating1Bar" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="25" />
+                  <IconSettings IconType="Rating2Bars" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="50" />
+                  <IconSettings IconType="Rating3Bars" />
+                </RangeInfo>
+                <RangeInfo>
+                  <Value Type="System.Double" Value="75" />
+                  <IconSettings IconType="Rating4Bars" />
+                </RangeInfo>
+              </Ranges>
+            </RangeSet>
+          </FormatConditionRangeSet>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="FormatRule 2" DataItem="DataItem3">
+          <FormatConditionBar>
+            <NegativeStyleSettings PredefinedColor="PaleRed" />
+            <StyleSettings PredefinedColor="PaleOrange" />
+            <BarOptions />
+          </FormatConditionBar>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridSparklineColumn>
+          <SparklineValue DefaultId="DataItem1" />
+          <SparklineOptions HighlightStartEndPoints="false" />
+        </GridSparklineColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure DefaultId="DataItem3" />
+        </GridMeasureColumn>
+        <GridMeasureColumn>
+          <Measure DefaultId="DataItem4" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <Card ComponentName="cardDashboardItem1" Name="Products" DataSource="dashboardObjectDataSource1">
+      <DataItems>
+        <Dimension DataMember="Product.Price" DefaultId="DataItem1" />
+        <Dimension DataMember="Product.Name" DefaultId="DataItem2" />
+        <Dimension DataMember="Invoice.InvoiceDate" DateTimeGroupInterval="QuarterYear" DefaultId="DataItem3" />
+        <Measure DataMember="Amount" DefaultId="DataItem0" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem1" />
+        <SeriesDimension DefaultId="DataItem2" />
+      </SeriesDimensions>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat FormatType="Number" Precision="0" />
+        <PercentVariationNumericFormat FormatType="Percent" />
+        <PercentOfTargetNumericFormat FormatType="Percent" />
+        <LayoutTemplate MinWidth="125" MaxWidth="150" Type="Compact">
+          <MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <BottomValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <BottomSubValue1 Visible="true" ValueType="AbsoluteVariation" DimensionIndex="0" />
+          <BottomSubValue2 Visible="true" ValueType="PercentVariation" DimensionIndex="0" />
+          <DeltaIndicator Visible="true" />
+          <Sparkline Visible="true" />
+        </LayoutTemplate>
+      </Card>
+      <SparklineArgument DefaultId="DataItem3" />
+    </Card>
+    <Pie ComponentName="pieDashboardItem1" Name="Pies 1" ShowCaption="false" DataSource="dashboardObjectDataSource1">
+      <InteractivityOptions IgnoreMasterFilters="true" />
+      <DataItems>
+        <Measure DataMember="Amount" Name="Revenue by Category" DefaultId="DataItem0" />
+        <Dimension DataMember="Product.Category.Name" Name="Category Name" DefaultId="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value DefaultId="DataItem0" />
+      </Values>
+    </Pie>
+    <BoundImage ComponentName="boundImageDashboardItem1" Name="Bound Image 1" ShowCaption="false" DataSource="dashboardObjectDataSource1">
+      <DataItems>
+        <Dimension DataMember="Product.Category.Image" DefaultId="DataItem0" />
+      </DataItems>
+      <ImageItem DefaultId="DataItem0" />
+    </BoundImage>
+    <RangeFilter ComponentName="rangeFilterDashboardItem1" Name="Range Filter 1" DataSource="dashboardObjectDataSource1">
+      <DataItems>
+        <Dimension DataMember="Invoice.InvoiceDate" DateTimeGroupInterval="MonthYear" DefaultId="DataItem1" />
+        <Measure DataMember="Amount" DefaultId="DataItem0" />
+      </DataItems>
+      <Argument DefaultId="DataItem1" />
+      <Series>
+        <Simple SeriesType="Area">
+          <Value DefaultId="DataItem0" />
+        </Simple>
+      </Series>
+    </RangeFilter>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup Weight="86.600496277915639">
+        <LayoutGroup Orientation="Vertical" Weight="49.913344887348352">
+          <LayoutItem DashboardItem="gridDashboardItem1" Weight="49.8567335243553" />
+          <LayoutItem DashboardItem="pieDashboardItem1" Weight="50.1432664756447" />
+        </LayoutGroup>
+        <LayoutGroup Orientation="Vertical" Weight="50.086655112651648">
+          <LayoutItem DashboardItem="boundImageDashboardItem1" Weight="43.839541547277939" />
+          <LayoutItem DashboardItem="cardDashboardItem1" Weight="56.160458452722061" />
+        </LayoutGroup>
+      </LayoutGroup>
+      <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="13.399503722084367" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

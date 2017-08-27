@@ -91,8 +91,8 @@
                                             </xaf:XafUpdatePanel>
                                         </td>
                                         <td>
-                                            <xaf:XafUpdatePanel ID="UPVH" runat="server" ForeColor="#2c86d3" Font-Size="X-Large">
-                                                <xaf:ViewCaptionControl ID="VCC" runat="server" />
+                                            <xaf:XafUpdatePanel ID="UPVH" runat="server" Font-Size="X-Large" ForeColor="#333399">
+                                                <xaf:ViewCaptionControl ID="VCC" runat="server" DetailViewCaptionMode="ViewAndObjectCaption" />
                                             </xaf:XafUpdatePanel>
                                         </td>
                                     </tr>

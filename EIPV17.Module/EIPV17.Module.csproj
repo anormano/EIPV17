@@ -213,6 +213,11 @@
       <DependentUpon>Module.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
@@ -221,6 +226,10 @@
       <DependentUpon>Module.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="DatabaseUpdate\ReadMe.txt" />
@@ -246,6 +255,8 @@
     <EmbeddedResource Include="Images\BO_Map_16x16.png" />
     <EmbeddedResource Include="Images\BO_Map_32x32.png" />
     <EmbeddedResource Include="Images\BO_Map_48x48.png" />
+    <None Include="Resources\SalesOverview.xml" />
+    <None Include="Resources\ShippingProvince.xml" />
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>
