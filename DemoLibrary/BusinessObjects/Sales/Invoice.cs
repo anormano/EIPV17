@@ -122,6 +122,7 @@ namespace DemoLibrary.BusinessObjects.Sales
         [PersistentAlias("SaleItems.Sum(Amount)")]
         [ModelDefault("DisplayFormat", "n2")]
         [ModelDefault("EditMask", "n2")]
+        [VisibleInListView(false)]
         public decimal DetailAmount
         {
             get
@@ -140,6 +141,7 @@ namespace DemoLibrary.BusinessObjects.Sales
         decimal discountAmount;
         [ModelDefault("DisplayFormat", "n2")]
         [ModelDefault("EditMask", "n2")]
+        [VisibleInListView(false)]
         public decimal DiscountAmount
         {
             get
@@ -155,6 +157,7 @@ namespace DemoLibrary.BusinessObjects.Sales
         decimal discountPercent;
         [ModelDefault("DisplayFormat", "{0:n2}%")]
         [ModelDefault("EditMask", "n2")]
+        [VisibleInListView(false)]
         public decimal DiscountPercent
         {
             get

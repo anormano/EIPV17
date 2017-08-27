@@ -93,18 +93,5 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="Employee_ListView">
-      <Columns>
-        <ColumnInfo Id="Fax" Index="-1" />
-        <ColumnInfo Id="Photo" Index="0" />
-        <ColumnInfo Id="DisplayName" Index="1" Width="279" />
-        <ColumnInfo Id="UserName" Index="2" Width="118" />
-        <ColumnInfo Id="JobTitle" Index="3" />
-        <ColumnInfo Id="IsActive" Index="4" />
-        <ColumnInfo Id="ChangePasswordOnFirstLogon" Index="5" />
-        <ColumnInfo Id="Email" Index="6" />
-        <ColumnInfo Id="MobilePhone" Index="7" Width="112" />
-      </Columns>
-    </ListView>
   </Views>
 </Application>

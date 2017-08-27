@@ -9,6 +9,8 @@
           <Item Id="Customer_ListView" Index="2" />
           <Item Id="Product_ListView" Index="3" />
           <Item Id="ProductCategory_ListView" Index="4" />
+          <DashboardNavigationItem Id="@0888d81e-4fd0-4cf0-8e4a-9a4bf0ea45c8" DashboardTitle="Sales Overview" Caption="Sales Overview" IsNewNode="True" />
+          <DashboardNavigationItem Id="ShippingProvinces" Caption="Shipping Provinces" DashboardTitle="Shipping Provinces" IsNewNode="True" />
         </Items>
       </Item>
       <Item Id="Administration">

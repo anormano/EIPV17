@@ -11,6 +11,8 @@ using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
+using DevExpress.ExpressApp.Dashboards;
+using EIPV17.Module.Properties;
 
 namespace EIPV17.Module.DatabaseUpdate {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppUpdatingModuleUpdatertopic.aspx
@@ -26,6 +28,8 @@ namespace EIPV17.Module.DatabaseUpdate {
             //    theObject = ObjectSpace.CreateObject<DomainObject1>();
             //    theObject.Name = name;
             //}
+            DashboardsModule.AddDashboardData<DashboardData>(ObjectSpace, "Sales Overview", Resources.SalesOverview);
+            DashboardsModule.AddDashboardData<DashboardData>(ObjectSpace, "Shipping Provinces", Resources.ShippingProvince);
         }
         public override void UpdateDatabaseBeforeUpdateSchema() {
             base.UpdateDatabaseBeforeUpdateSchema();
