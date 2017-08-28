@@ -39,13 +39,13 @@ namespace EIPV17.Win
             // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
             //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
             SecurityAdapterHelper.Enable();
-            //string connectionString = "tcp://35.198.234.127:8080/DataServer";
+            //string connectionString = "tcp://35.185.182.8:8080/DataServer";
             string connectionString = "tcp://localhost:8080/DataServer";
             try
             {
                 Hashtable t = new Hashtable();
-                t.Add("secure", true);
-                t.Add("tokenImpersonationLevel", "impersonation");
+                //t.Add("secure", false); //default true
+                //t.Add("tokenImpersonationLevel", "impersonation");
                 TcpChannel channel = new TcpChannel(t, null, null);
                 ChannelServices.RegisterChannel(channel, true);
                 IDataServer clientDataServer = (IDataServer)Activator.GetObject(

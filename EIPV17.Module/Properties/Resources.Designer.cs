@@ -81,20 +81,20 @@ namespace EIPV17.Module.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;Dashboard CurrencyCulture=&quot;en-US&quot;&gt;
+        ///&lt;Dashboard CurrencyCulture=&quot;id-ID&quot;&gt;
         ///  &lt;Title Text=&quot;Shipping Provinces&quot; /&gt;
         ///  &lt;DataSources&gt;
         ///    &lt;ObjectDataSource ComponentName=&quot;dashboardObjectDataSource1&quot;&gt;
         ///      &lt;Name&gt;Object Data Source 1&lt;/Name&gt;
-        ///      &lt;DataSource Type=&quot;DemoLibrary.BusinessObjects.Sales.SaleItem, DemoLibrary, Version=1.0.6448.33812, Culture=neutral, PublicKeyToken=null&quot; /&gt;
+        ///      &lt;DataSource Type=&quot;DemoLibrary.BusinessObjects.Sales.SaleItem, DemoLibrary, Version=1.0.6449.31218, Culture=neutral, PublicKeyToken=null&quot; /&gt;
         ///    &lt;/ObjectDataSource&gt;
         ///  &lt;/DataSources&gt;
         ///  &lt;Items&gt;
         ///    &lt;RangeFilter ComponentName=&quot;rangeFilterDashboardItem1&quot; Name=&quot;Range [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string ShippingProvince {
+        internal static string ShippingProvinces {
             get {
-                return ResourceManager.GetString("ShippingProvince", resourceCulture);
+                return ResourceManager.GetString("ShippingProvinces", resourceCulture);
             }
         }
     }

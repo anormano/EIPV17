@@ -25,8 +25,8 @@ namespace EIPV17.Web {
 			ASPxWebControl.CallbackError += new EventHandler(Application_Error);
 			string connectionString = "tcp://localhost:8080/DataServer";
 			Hashtable t = new Hashtable();
-			t.Add("secure", true);
-			t.Add("tokenImpersonationLevel", "impersonation");
+			//t.Add("secure", false);
+			//t.Add("tokenImpersonationLevel", "impersonation");
 			TcpChannel channel = new TcpChannel(t, null, null);
 			ChannelServices.RegisterChannel(channel, true);
 			this.Application["DataServer"] = Activator.GetObject(typeof(RemoteSecuredDataServer), connectionString);

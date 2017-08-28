@@ -132,8 +132,8 @@ namespace EIPV17.ApplicationServer
 
             IDictionary t = new Hashtable();
             t.Add("port", 8080);
-            t.Add("secure", true);
-            t.Add("impersonate", true);
+            //t.Add("secure", false); //default true
+            //t.Add("impersonate", false); //default true
 
             TcpChannel channel = new TcpChannel(t, null, null);
             ChannelServices.RegisterChannel(channel, true);
