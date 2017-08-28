@@ -29,7 +29,7 @@ namespace EIPV17.Module.DatabaseUpdate {
             //    theObject.Name = name;
             //}
             DashboardsModule.AddDashboardData<DashboardData>(ObjectSpace, "Sales Overview", Resources.SalesOverview);
-            DashboardsModule.AddDashboardData<DashboardData>(ObjectSpace, "Shipping Provinces", Resources.ShippingProvince);
+            DashboardsModule.AddDashboardData<DashboardData>(ObjectSpace, "Shipping Provinces", Resources.ShippingProvinces);
         }
         public override void UpdateDatabaseBeforeUpdateSchema() {
             base.UpdateDatabaseBeforeUpdateSchema();

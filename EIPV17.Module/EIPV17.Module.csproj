@@ -256,7 +256,7 @@
     <EmbeddedResource Include="Images\BO_Map_32x32.png" />
     <EmbeddedResource Include="Images\BO_Map_48x48.png" />
     <None Include="Resources\SalesOverview.xml" />
-    <None Include="Resources\ShippingProvince.xml" />
+    <None Include="Resources\ShippingProvinces.xml" />
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>
