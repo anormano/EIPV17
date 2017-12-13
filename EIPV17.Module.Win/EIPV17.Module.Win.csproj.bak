@@ -57,6 +57,33 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EasyTest|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\EasyTest\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Dashboard.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -278,6 +305,31 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\LabelTextViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\LabelTextViewController.Designer.cs">
+      <DependentUpon>LabelTextViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\IPanelCaption.cs" />
+    <Compile Include="Templates\MainRibbonFormTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templates\MainRibbonFormTemplate.Designer.cs">
+      <DependentUpon>MainRibbonFormTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\OutlookStyleMainRibbonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templates\OutlookStyleMainRibbonForm.Designer.cs">
+      <DependentUpon>OutlookStyleMainRibbonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\OutlookStyleMainRibbonFormTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templates\OutlookStyleMainRibbonFormTemplate.Designer.cs">
+      <DependentUpon>OutlookStyleMainRibbonFormTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -288,6 +340,16 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Templates\MainRibbonFormTemplate.resx">
+      <DependentUpon>MainRibbonFormTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\OutlookStyleMainRibbonForm.resx">
+      <DependentUpon>OutlookStyleMainRibbonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\OutlookStyleMainRibbonFormTemplate.resx">
+      <DependentUpon>OutlookStyleMainRibbonFormTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinModule.resx">
       <DependentUpon>WinModule.cs</DependentUpon>
       <SubType>Designer</SubType>

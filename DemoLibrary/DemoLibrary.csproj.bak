@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CE7926A9-60FF-4C9A-AE27-2D7499F27349}</ProjectGuid>
+    <ProjectGuid>{87BC865B-E978-44DF-90A2-86352E0E9F86}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CommonLibrary</RootNamespace>
-    <AssemblyName>CommonLibrary</AssemblyName>
+    <RootNamespace>DemoLibrary</RootNamespace>
+    <AssemblyName>DemoLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -70,16 +70,13 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.ExpressApp.AuditTrail.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.CloneObject.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Objects.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.ExpressApp.Security.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Validation.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
@@ -127,14 +124,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessObjects\Administration\Employee.cs" />
-    <Compile Include="BusinessObjects\Administration\EmployeeRole.cs" />
-    <Compile Include="BusinessObjects\Areas\Country.cs" />
-    <Compile Include="BusinessObjects\Areas\District.cs" />
-    <Compile Include="BusinessObjects\Areas\Province.cs" />
-    <Compile Include="BusinessObjects\Areas\SubDistrict.cs" />
-    <Compile Include="BusinessObjects\BaseObjects\EnumLibrary.cs" />
-    <Compile Include="BusinessObjects\BaseObjects\People.cs" />
+    <Compile Include="BusinessObjects\Other\NoteBase.cs" />
+    <Compile Include="BusinessObjects\Products\Product.cs" />
+    <Compile Include="BusinessObjects\Products\ProductCategory.cs" />
+    <Compile Include="BusinessObjects\Products\ProductNote.cs" />
+    <Compile Include="BusinessObjects\Sales\Customer.cs" />
+    <Compile Include="BusinessObjects\Sales\CustomerNote.cs" />
+    <Compile Include="BusinessObjects\Sales\Invoice.cs" />
+    <Compile Include="BusinessObjects\Sales\SaleItem.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
@@ -164,6 +161,12 @@
   <ItemGroup>
     <None Include="Images\ReadMe.txt" />
     <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
+      <Project>{ce7926a9-60ff-4c9a-ae27-2d7499f27349}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
