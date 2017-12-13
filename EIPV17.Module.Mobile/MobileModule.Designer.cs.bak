@@ -29,11 +29,11 @@
             this.RequiredModuleTypes.Add(typeof(EIPV17.Module.EIPV17Module));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Mobile.SystemModule.SystemMobileModule));
 			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.CloneObject.Mobile.CloneObjectMobileModule));
-			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ConditionalAppearance.Mobile.ConditionalAppearanceMobileModule));
+			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Mobile.ConditionalAppearance.ConditionalAppearanceMobileModule));
 			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.FileAttachments.Mobile.FileAttachmentsMobileModule));
 			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Maps.Mobile.MapsMobileModule));
 			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ReportsV2.Mobile.ReportsMobileModuleV2));
-			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.Mobile.ValidationMobileModule));
+			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Mobile.Validation.ValidationMobileModule));
         }
 
         #endregion
