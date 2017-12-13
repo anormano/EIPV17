@@ -50,9 +50,6 @@
       <assemblies>
       </assemblies>
     </compilation>
-    <httpHandlers>
-      <add verb="*" path="Static*" type="DevExpress.ExpressApp.Mobile.StaticResourcesHttpHandler, DevExpress.ExpressApp.Mobile.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    </httpHandlers>
   </system.web>
   <system.serviceModel>
     <bindings>
@@ -89,8 +86,8 @@
     <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
   </system.serviceModel>
   <system.webServer>
-    <validation validateIntegratedModeConfiguration="false" />
-    <httpRedirect enabled="true" httpResponseStatus="Permanent">
+    <validation validateIntegratedModeConfiguration="false"/>
+    <httpRedirect enabled="true" httpResponseStatus="Permanent" >
       <add wildcard="/" destination="Static" />
     </httpRedirect>
 	<handlers>
