@@ -60,7 +60,6 @@
          this.workflowModule = new DevExpress.ExpressApp.Workflow.WorkflowModule();
          this.workflowWindowsFormsModule = new DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule();
          this.commonLibraryModule1 = new CommonLibrary.CommonLibraryModule();
-         this.demoLibraryModule1 = new DemoLibrary.DemoLibraryModule();
          ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
          // 
          // auditTrailModule
@@ -139,7 +138,6 @@
          this.Modules.Add(this.viewVariantsModule);
          this.Modules.Add(this.workflowModule);
          this.Modules.Add(this.commonLibraryModule1);
-         this.Modules.Add(this.demoLibraryModule1);
          this.Modules.Add(this.module3);
          this.Modules.Add(this.chartWindowsFormsModule);
          this.Modules.Add(this.dashboardsWindowsFormsModule);
@@ -202,6 +200,5 @@
         private DevExpress.ExpressApp.Workflow.WorkflowModule workflowModule;
         private DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule workflowWindowsFormsModule;
       private CommonLibrary.CommonLibraryModule commonLibraryModule1;
-      private DemoLibrary.DemoLibraryModule demoLibraryModule1;
    }
 }
