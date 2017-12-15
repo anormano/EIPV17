@@ -1,10 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
+  <NavigationItems>
+    <Items>
+      <Item Id="Administration">
+        <Items>
+          <Item Id="SystemSetting_ListView" ViewId="SystemSetting_DetailView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="17.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="17.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="Employee_DetailView">
