@@ -11,10 +11,12 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using CommonLibrary.BusinessObjects.Areas;
+using DevExpress.ExpressApp.Editors;
 
 namespace CommonLibrary.BusinessObjects.Administration
 {
-    
+
     [NavigationItem("Administration")]
     [RuleObjectExists("AnotherSystemSettingExists", DefaultContexts.Save, "True", InvertResult = true,
     CustomMessageTemplate = "Another System Setting already exists.")]
@@ -50,5 +52,26 @@ namespace CommonLibrary.BusinessObjects.Administration
         //}
 
         public string CompanyName { get; set; }
+
+        [Size(SizeAttribute.Unlimited)]
+        [EditorAlias(EditorAliases.StringPropertyEditor)]
+        [ModelDefault("RowCount", "3")]
+        public string Address { get; set; }
+
+        public string PostalCode { get; set; }
+
+        [ImmediatePostData]
+        public Areas.Country Country { get; set; }
+
+        [ImmediatePostData]
+        [DataSourceProperty("Country.Provinces")]
+        public Province Provice { get; set; }
+
+        [ImmediatePostData]
+        [DataSourceProperty("Province.Districts")]
+        public District District { get; set; }
+
+        [DataSourceProperty("District.SubDistricts")]
+        public SubDistrict SubDistrict { get; set; }
     }
 }
