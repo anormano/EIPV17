@@ -14,6 +14,7 @@ using DevExpress.Persistent.Validation;
 using static CommonLibrary.BusinessObjects.BaseObjects.EnumLibrary;
 using DevExpress.ExpressApp.Editors;
 using CommonLibrary.BusinessObjects.Areas;
+using CommonLibrary.CodeLibrary;
 
 namespace CommonLibrary.BusinessObjects.BaseObjects
 {
@@ -99,6 +100,21 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
             set
             {
                 SetPropertyValue("BirthDate", ref birthDate, value);
+            }
+        }
+
+        int age;
+        [VisibleInDetailView(false), VisibleInListView(false), VisibleInLookupListView(false), NonPersistent]
+        public int Age
+        {
+            get
+            {
+                age = 0;
+                if (BirthDate > DateTime.MinValue)
+                {
+                    age = CodeLibrary.CommonLibrary.CalculateAge(BirthDate, DateTime.Now);
+                }
+                return age;
             }
         }
 

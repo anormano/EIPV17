@@ -146,6 +146,7 @@
     <Compile Include="BusinessObjects\Areas\SubDistrict.cs" />
     <Compile Include="BusinessObjects\BaseObjects\EnumLibrary.cs" />
     <Compile Include="BusinessObjects\BaseObjects\People.cs" />
+    <Compile Include="CodeLibrary\CommonLibrary.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>

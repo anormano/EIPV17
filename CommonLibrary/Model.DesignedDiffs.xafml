@@ -13,7 +13,7 @@
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="17.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="Employee_DetailView">

@@ -73,5 +73,8 @@ namespace CommonLibrary.BusinessObjects.Administration
 
         [DataSourceProperty("District.SubDistricts")]
         public SubDistrict SubDistrict { get; set; }
+
+        [ImageEditor(ImageSizeMode = ImageSizeMode.Zoom, DetailViewImageEditorMode = ImageEditorMode.PictureEdit, DetailViewImageEditorFixedHeight = 200, DetailViewImageEditorFixedWidth = 300)]
+        public MediaDataObject Logo { get; set; }
     }
 }
