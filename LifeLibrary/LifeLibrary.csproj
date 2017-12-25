@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="BusinessObjects\Reference\Desease.cs" />
     <Compile Include="BusinessObjects\Reference\LifeRisk.cs" />
+    <Compile Include="BusinessObjects\Underwriting\LifeInsuranceRequestForm.cs" />
     <Compile Include="BusinessObjects\Underwriting\Product.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
@@ -113,6 +114,12 @@
   <ItemGroup>
     <None Include="Images\ReadMe.txt" />
     <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
+      <Project>{ce7926a9-60ff-4c9a-ae27-2d7499f27349}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
