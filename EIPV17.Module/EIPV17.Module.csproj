@@ -295,6 +295,10 @@
       <Project>{CE7926A9-60FF-4C9A-AE27-2D7499F27349}</Project>
       <Name>CommonLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LifeLibrary\LifeLibrary.csproj">
+      <Project>{C16795DD-5EA1-451D-BFD2-8FAA50AB7FA9}</Project>
+      <Name>LifeLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
