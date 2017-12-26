@@ -21,9 +21,9 @@ namespace LifeLibrary.BusinessObjects.Underwriting
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class Product : BaseObject
+    public class InvestmentFund : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public Product(Session session)
+        public InvestmentFund(Session session)
             : base(session)
         {
         }
@@ -48,10 +48,8 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         //}
         [RuleRequiredField]
         public string Name { get; set; }
-        public int PaymentPeriod { get; set; }
-
-        [EditorAlias(EditorAliases.HtmlPropertyEditor)]
         [Size(SizeAttribute.Unlimited)]
+        [EditorAlias(EditorAliases.HtmlPropertyEditor)]
         public string Description { get; set; }
     }
 }

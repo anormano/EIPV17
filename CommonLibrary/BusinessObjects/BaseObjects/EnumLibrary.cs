@@ -42,5 +42,32 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
             SIM,
             Passpor
         }
+
+        public enum InsuredRelationship
+        {
+            Undefined,
+            Parent,
+            Children,
+            Spouse,
+            Others
+        }
+
+        public enum PaymentPeriodType
+        {
+            Single,
+            Month,
+            Quarter,
+            BiAnnual,
+            Year
+
+        }
+        public enum PaymentTerm
+        {
+            Single,
+            Monthly,
+            Quarterly,
+            BiAnually,
+            Anually
+        }
     }
 }

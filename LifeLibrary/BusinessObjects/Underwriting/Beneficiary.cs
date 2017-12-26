@@ -11,19 +11,20 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
-using DevExpress.ExpressApp.Editors;
+using static CommonLibrary.BusinessObjects.BaseObjects.EnumLibrary;
 
 namespace LifeLibrary.BusinessObjects.Underwriting
 {
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
     [DefaultProperty("Name")]
+    [NavigationItem(false)]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class Product : BaseObject
+    public class Beneficiary : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public Product(Session session)
+        public Beneficiary(Session session)
             : base(session)
         {
         }
@@ -46,12 +47,16 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
         //    this.PersistentProperty = "Paid";
         //}
+
+        [Association("LifeInsuranceRequestForm-Beneficiaries")]
+        public LifeInsuranceRequestForm LifeInsurenceRequestForm { get; set; }
         [RuleRequiredField]
         public string Name { get; set; }
-        public int PaymentPeriod { get; set; }
-
-        [EditorAlias(EditorAliases.HtmlPropertyEditor)]
-        [Size(SizeAttribute.Unlimited)]
-        public string Description { get; set; }
+        public DateTime BirthDate { get; set; }
+        public Gender Gender { get; set; }
+        public InsuredRelationship Relationship { get; set; }
+        public string OtherRelationship { get; set; }
+        [ModelDefault("Caption", "% SI")]
+        public decimal SumInsuredPercent { get; set; }
     }
 }
