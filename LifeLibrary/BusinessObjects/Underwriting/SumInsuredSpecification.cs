@@ -11,20 +11,18 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
-using DevExpress.ExpressApp.Editors;
-using static CommonLibrary.BusinessObjects.BaseObjects.EnumLibrary;
 
 namespace LifeLibrary.BusinessObjects.Underwriting
 {
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
-    [DefaultProperty("Name")]
+    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class Product : BaseObject
+    public class SumInsuredSpecification : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public Product(Session session)
+        public SumInsuredSpecification(Session session)
             : base(session)
         {
         }
@@ -47,23 +45,12 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
         //    this.PersistentProperty = "Paid";
         //}
-        [RuleRequiredField]
+
         public string Name { get; set; }
-        public int PaymentPeriod { get; set; }
-        public PaymentPeriodType PeriodType { get; set; }
-        public PaymentTerm PeriodTerm { get; set; }
-
-
-        [EditorAlias(EditorAliases.HtmlPropertyEditor)]
-        [Size(SizeAttribute.Unlimited)]
-        public string Description { get; set; }
-        [Association("Product-SumInsuredSpecifications"), DevExpress.Xpo.Aggregated]
-        public XPCollection<SumInsuredSpecification> SumInsuredSpecifications
-        {
-            get
-            {
-                return GetCollection<SumInsuredSpecification>("SumInsuredSpecifications");
-            }
-        }
+        [Association("Product-SumInsuredSpecifications")]
+        public Product Product { get; set; }
+        public decimal SumInsured { get; set; }
+        public decimal BasePremium { get; set; }
+        public decimal TopUpPremium { get; set; }
     }
 }
