@@ -164,6 +164,9 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         [ModelDefault("Caption", "Weight")]
         public decimal PolicyHolderWeight { get; set; }
 
+        [ModelDefault("Caption", "Policy Holder is not Insured")]
+        public bool IsNotInsured { get; set; }
+
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Full Name")]
         public string InsuredName { get; set; }
@@ -279,7 +282,6 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         [ModelDefault("Caption", "Other")]
         public string OtherRelationship { get; set; }
 
-
         #region Desease
         [VisibleInListView(false)]
         public Answer IsHospitalized { get; set; }
@@ -313,10 +315,6 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         [EditorAlias(EditorAliases.StringPropertyEditor)]
         public string Explanation { get; set; }
         #endregion
-
-
-
-
 
         [Association("LifeInsuranceRequestForm-Beneficiaries"), DevExpress.Xpo.Aggregated]
         public XPCollection<Beneficiary> Beneficiaries

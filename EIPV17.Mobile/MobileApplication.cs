@@ -54,7 +54,7 @@ namespace EIPV17.Mobile {
         #endregion
         public EIPV17MobileApplication() {
             SecurityAdapterHelper.Enable();
-            string connectionString = "tcp://localhost:1425/DataServer";
+            string connectionString = "tcp://localhost:8080/DataServer";
             Hashtable t = new Hashtable();
             t.Add("secure", true);
             t.Add("tokenImpersonationLevel", "impersonation");
