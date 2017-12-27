@@ -69,5 +69,21 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
             BiAnually,
             Anually
         }
+
+        public enum LifeInsuranceRequestFormStatus
+        {
+            Draft,
+            Pending,
+            Completed,
+            Canceled,
+            Denied
+        }
+
+        public enum Answer
+        {
+            Unanswered,
+            Yes,
+            No
+        }
     }
 }

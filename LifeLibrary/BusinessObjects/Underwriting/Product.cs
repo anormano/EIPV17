@@ -49,6 +49,7 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         //}
         [RuleRequiredField]
         public string Name { get; set; }
+        [RuleValueComparison(ValueComparisonType.GreaterThan, 0)]
         public int PaymentPeriod { get; set; }
         public PaymentPeriodType PeriodType { get; set; }
         public PaymentTerm PeriodTerm { get; set; }
@@ -57,12 +58,22 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         [EditorAlias(EditorAliases.HtmlPropertyEditor)]
         [Size(SizeAttribute.Unlimited)]
         public string Description { get; set; }
+
         [Association("Product-SumInsuredSpecifications"), DevExpress.Xpo.Aggregated]
         public XPCollection<SumInsuredSpecification> SumInsuredSpecifications
         {
             get
             {
                 return GetCollection<SumInsuredSpecification>("SumInsuredSpecifications");
+            }
+        }
+
+        [Association("Product-InvestmentAllocations"), DevExpress.Xpo.Aggregated]
+        public XPCollection<InvestmentAllocation> InvestmentAllocations
+        {
+            get
+            {
+                return GetCollection<InvestmentAllocation>("InvestmentAllocations");
             }
         }
     }

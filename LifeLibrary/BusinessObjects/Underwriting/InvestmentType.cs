@@ -16,15 +16,14 @@ using DevExpress.ExpressApp.Editors;
 namespace LifeLibrary.BusinessObjects.Underwriting
 {
     [DefaultClassOptions]
-    [NavigationItem(false)]
     //[ImageName("BO_Contact")]
     [DefaultProperty("Name")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class InvestmentAllocation : BaseObject
+    public class InvestmentType : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public InvestmentAllocation(Session session)
+        public InvestmentType(Session session)
             : base(session)
         {
         }
@@ -47,10 +46,10 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
         //    this.PersistentProperty = "Paid";
         //}
-        [Association("Product-InvestmentAllocations")]
-        public Product Product { get; set; }
         [RuleRequiredField]
-        public InvestmentType InvestmentType { get; set; }
-
+        public string Name { get; set; }
+        [Size(SizeAttribute.Unlimited)]
+        [EditorAlias(EditorAliases.HtmlPropertyEditor)]
+        public string Description { get; set; }
     }
 }

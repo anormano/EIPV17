@@ -87,6 +87,7 @@
     <Compile Include="BusinessObjects\Reference\LifeRisk.cs" />
     <Compile Include="BusinessObjects\Underwriting\Beneficiary.cs" />
     <Compile Include="BusinessObjects\Underwriting\InvestmentAllocation.cs" />
+    <Compile Include="BusinessObjects\Underwriting\InvestmentType.cs" />
     <Compile Include="BusinessObjects\Underwriting\LifeInsuranceRequestForm.cs" />
     <Compile Include="BusinessObjects\Underwriting\Product.cs" />
     <Compile Include="BusinessObjects\Underwriting\SumInsuredSpecification.cs" />
