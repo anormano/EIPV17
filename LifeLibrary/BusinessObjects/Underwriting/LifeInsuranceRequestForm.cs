@@ -15,10 +15,18 @@ using static CommonLibrary.BusinessObjects.BaseObjects.EnumLibrary;
 using CommonLibrary.BusinessObjects.Areas;
 using DevExpress.ExpressApp.Editors;
 using CommonLibrary.BusinessObjects.Administration;
+using DevExpress.ExpressApp.ConditionalAppearance;
 
 namespace LifeLibrary.BusinessObjects.Underwriting
 {
     [DefaultClassOptions]
+    [Appearance("HideInsured", "IsNotInsured=False", TargetItems = "InsuredGroup", Visibility = ViewItemVisibility.Hide, AppearanceItemType = "LayoutItem")]
+    //[Appearance("ShowInsured", "IsNotInsured=True", TargetItems = "InsuredGroup", Visibility = ViewItemVisibility.Show, AppearanceItemType = "LayoutItem")]
+    [Appearance("HideOtherEntry", "Other=False", TargetItems = "OtherEntry", Enabled = false, AppearanceItemType = "ViewItem")]
+    [Appearance("ShowOtherEntry", "Other=True", TargetItems = "OtherEntry", Enabled = true, AppearanceItemType = "ViewItem")]
+    [Appearance("ShowExplanation", "IsHospitalized = true or IsDiabetic = true or IsCancer = true or IsHepatitic = true or IsKedneyDefect = true or IsBoneDefect = true or IsBloodDefect = true or IsHormonalDefect = true or IsAsthma = true or IsAids = true or IsCongenital = true or Other = true", TargetItems = "Explanation", Enabled = true, AppearanceItemType = "ViewItem")]
+    [Appearance("HideExplanation", "IsHospitalized = false and IsDiabetic = false and IsCancer = false and IsHepatitic = false and IsKedneyDefect = false and IsBoneDefect = false and IsBloodDefect = false and IsHormonalDefect = false and IsAsthma = false and IsAids = false and IsCongenital = false and Other = false", TargetItems = "Explanation", Enabled = false, AppearanceItemType = "ViewItem")]
+
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
@@ -51,9 +59,14 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         //}
 
         public string FormNumber { get; set; }
+        [ImmediatePostData]
         public Product Product { get; set; }
         public Employee Agent { get; set; }
         public LifeInsuranceRequestFormStatus Status { get; set; }
+        [DataSourceProperty("Product.InvestmentAllocations")]
+        public InvestmentAllocation InvestmentAllocation { get; set; }
+        [DataSourceProperty("Product.SumInsuredSpecifications")]
+        public SumInsuredSpecification SumInsured { get; set; }
 
         [ModelDefault("Caption", "Full Name")]
         public string PolicyHolderName { get; set; }
@@ -165,6 +178,7 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         public decimal PolicyHolderWeight { get; set; }
 
         [ModelDefault("Caption", "Policy Holder is not Insured")]
+        [ImmediatePostData]
         public bool IsNotInsured { get; set; }
 
         [VisibleInListView(false)]
@@ -281,33 +295,45 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Other")]
         public string OtherRelationship { get; set; }
-
         #region Desease
         [VisibleInListView(false)]
-        public Answer IsHospitalized { get; set; }
+        [ImmediatePostData(true)]
+        public bool IsHospitalized { get; set; }
         [VisibleInListView(false)]
-        public Answer IsDiabetic { get; set; }
+        [ImmediatePostData(true)]
+        public bool IsDiabetic { get; set; }
         [VisibleInListView(false)]
-        public Answer IsCancer { get; set; }
+        [ImmediatePostData(true)]
+        public bool IsCancer { get; set; }
         [VisibleInListView(false)]
-        public Answer IsHepatitic { get; set; }
+        [ImmediatePostData(true)]
+        public bool IsHepatitic { get; set; }
         [VisibleInListView(false)]
-        public Answer IsKedneyDefect { get; set; }
+        [ImmediatePostData(true)]
+        public bool IsKedneyDefect { get; set; }
         [VisibleInListView(false)]
-        public Answer IsBoneDefect { get; set; }
+        [ImmediatePostData(true)]
+        public bool IsBoneDefect { get; set; }
         [VisibleInListView(false)]
-        public Answer IsBloodDefect { get; set; }
+        [ImmediatePostData(true)]
+        public bool IsBloodDefect { get; set; }
         [VisibleInListView(false)]
-        public Answer IsHormonalDefect { get; set; }
+        [ImmediatePostData(true)]
+        public bool IsHormonalDefect { get; set; }
         [VisibleInListView(false)]
-        public Answer IsAsthma { get; set; }
+        [ImmediatePostData(true)]
+        public bool IsAsthma { get; set; }
         [VisibleInListView(false)]
-        public Answer IsAids { get; set; }
+        [ImmediatePostData(true)]
+        public bool IsAids { get; set; }
         [VisibleInListView(false)]
-        public Answer IsCongenital { get; set; }
+        [ImmediatePostData(true)]
+        public bool IsCongenital { get; set; }
         [VisibleInListView(false)]
-        public Answer Other { get; set; }
+        [ImmediatePostData(true)]
+        public bool Other { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData(true)]
         public string OtherEntry { get; set; }
         [VisibleInListView(false)]
         [Size(SizeAttribute.Unlimited)]

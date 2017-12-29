@@ -138,7 +138,7 @@
                 </LayoutGroup>
               </LayoutGroup>
             </LayoutGroup>
-            <LayoutGroup Id="Insured" Index="2" ShowCaption="True" IsNewNode="True">
+            <LayoutGroup Id="InsuredGroup" Index="2" ShowCaption="True" Caption="Insured" IsNewNode="True">
               <LayoutGroup Id="InsuredRow1" Index="0" Direction="Horizontal" IsNewNode="True">
                 <LayoutGroup Id="GeneralInformation" Caption="General Information" Index="0" ShowCaption="True" IsNewNode="True">
                   <LayoutItem Id="InsuredIdentityType" ViewItem="InsuredIdentityType" ShowCaption="" Index="0" IsNewNode="True" />
@@ -203,11 +203,11 @@
                   <LayoutItem Id="IsHormonalDefect" ViewItem="IsHormonalDefect" ShowCaption="" Index="32" IsNewNode="True" />
                   <LayoutItem Id="IsAsthma" ViewItem="IsAsthma" ShowCaption="" Index="33" IsNewNode="True" />
                   <LayoutItem Id="IsCongenital" ViewItem="IsCongenital" ShowCaption="" Index="35" IsNewNode="True" />
+                  <LayoutItem Id="Other" ViewItem="Other" ShowCaption="" Index="36" IsNewNode="True" />
                 </LayoutGroup>
               </LayoutGroup>
               <LayoutGroup Id="Row2" Index="2" IsNewNode="True">
                 <LayoutItem Id="OtherEntry" ViewItem="OtherEntry" ShowCaption="" Index="2" IsNewNode="True" />
-                <LayoutItem Id="Other" ViewItem="Other" ShowCaption="" Index="36" IsNewNode="True" />
               </LayoutGroup>
               <LayoutGroup Id="Row3" IsNewNode="True">
                 <LayoutItem Id="Explanation" ViewItem="Explanation" ShowCaption="" Index="6" IsNewNode="True" />
