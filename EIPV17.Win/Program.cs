@@ -59,6 +59,7 @@ namespace EIPV17.Win
                    {
                        e.ObjectSpaceProvider = new DataServerObjectSpaceProvider(clientDataServer, securityClient);
                    };
+                winApplication.UseLightStyle = true;
                 winApplication.Setup();
                 winApplication.Start();
             }

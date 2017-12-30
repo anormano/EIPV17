@@ -1,14 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="Aturable.com Demo Apps" Company="Aturable.com" Copyright="Copyright (c) 2017 Aturable.com, All Rights Reserved">
+<Application Title="InsureCore" Company="Aturable.com" Copyright="Copyright (c) 2017 Aturable.com, All Rights Reserved">
   <NavigationItems>
     <Items>
       <Item Id="Default" Index="0" Caption="Workspace">
         <Items>
           <Item Id="Event_ListView" Index="0" />
-          <Item Id="Invoice_ListView" Index="1" />
-          <Item Id="Customer_ListView" Index="2" />
           <Item Id="Product_ListView" Index="3" />
-          <Item Id="ProductCategory_ListView" Index="4" />
           <DashboardNavigationItem Id="@0888d81e-4fd0-4cf0-8e4a-9a4bf0ea45c8" DashboardTitle="Sales Overview" Caption="Sales Overview" IsNewNode="True" />
           <DashboardNavigationItem Id="ShippingProvinces" Caption="Shipping Provinces" DashboardTitle="Shipping Provinces" IsNewNode="True" />
         </Items>
@@ -29,8 +26,8 @@
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="17.1.5.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerModuleBase" Version="17.1.5.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="17.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="CloneObjectModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
   </SchemaModules>
 </Application>

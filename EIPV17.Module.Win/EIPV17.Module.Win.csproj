@@ -333,23 +333,11 @@
       <DependentUpon>LabelTextViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Templates\IPanelCaption.cs" />
-    <Compile Include="Templates\MainRibbonFormTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Templates\MainRibbonFormTemplate.Designer.cs">
-      <DependentUpon>MainRibbonFormTemplate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Templates\OutlookStyleMainRibbonForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Templates\OutlookStyleMainRibbonForm.Designer.cs">
       <DependentUpon>OutlookStyleMainRibbonForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\OutlookStyleMainRibbonFormTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Templates\OutlookStyleMainRibbonFormTemplate.Designer.cs">
-      <DependentUpon>OutlookStyleMainRibbonFormTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>
@@ -362,14 +350,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Templates\MainRibbonFormTemplate.resx">
-      <DependentUpon>MainRibbonFormTemplate.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Templates\OutlookStyleMainRibbonForm.resx">
       <DependentUpon>OutlookStyleMainRibbonForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Templates\OutlookStyleMainRibbonFormTemplate.resx">
-      <DependentUpon>OutlookStyleMainRibbonFormTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinModule.resx">
       <DependentUpon>WinModule.cs</DependentUpon>

@@ -52,6 +52,7 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         [RuleValueComparison(ValueComparisonType.GreaterThan, 0)]
         public int PaymentPeriod { get; set; }
         public PaymentPeriodType PeriodType { get; set; }
+        [ModelDefault("Caption", "Payment Period")]
         public PaymentTerm PeriodTerm { get; set; }
 
 

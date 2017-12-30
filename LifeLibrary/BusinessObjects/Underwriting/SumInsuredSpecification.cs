@@ -15,6 +15,7 @@ using DevExpress.Persistent.Validation;
 namespace LifeLibrary.BusinessObjects.Underwriting
 {
     [DefaultClassOptions]
+    [NavigationItem(false)]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
