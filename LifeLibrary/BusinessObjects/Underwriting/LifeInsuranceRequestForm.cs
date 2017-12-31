@@ -22,11 +22,11 @@ namespace LifeLibrary.BusinessObjects.Underwriting
     [DefaultClassOptions]
     [Appearance("HideInsured", "IsNotInsured=False", TargetItems = "InsuredGroup", Visibility = ViewItemVisibility.Hide, AppearanceItemType = "LayoutItem")]
     //[Appearance("ShowInsured", "IsNotInsured=True", TargetItems = "InsuredGroup", Visibility = ViewItemVisibility.Show, AppearanceItemType = "LayoutItem")]
-    [Appearance("HideOtherEntry", "Other=False", TargetItems = "OtherEntry", Enabled = false, AppearanceItemType = "ViewItem")]
-    [Appearance("ShowOtherEntry", "Other=True", TargetItems = "OtherEntry", Enabled = true, AppearanceItemType = "ViewItem")]
-    [Appearance("ShowExplanation", "IsHospitalized = true or IsDiabetic = true or IsCancer = true or IsHepatitic = true or IsKedneyDefect = true or IsBoneDefect = true or IsBloodDefect = true or IsHormonalDefect = true or IsAsthma = true or IsAids = true or IsCongenital = true or Other = true", TargetItems = "Explanation", Enabled = true, AppearanceItemType = "ViewItem")]
-    [Appearance("HideExplanation", "IsHospitalized = false and IsDiabetic = false and IsCancer = false and IsHepatitic = false and IsKedneyDefect = false and IsBoneDefect = false and IsBloodDefect = false and IsHormonalDefect = false and IsAsthma = false and IsAids = false and IsCongenital = false and Other = false", TargetItems = "Explanation", Enabled = false, AppearanceItemType = "ViewItem")]
-
+    [Appearance("HideOtherEntry", "Other=False", TargetItems = "OtherEntry", Visibility = ViewItemVisibility.Hide, AppearanceItemType = "ViewItem")]
+    [Appearance("ShowOtherEntry", "Other=True", TargetItems = "OtherEntry", Visibility = ViewItemVisibility.Show, AppearanceItemType = "ViewItem")]
+    [Appearance("ShowExplanation", "IsHospitalized = true or IsDiabetic = true or IsCancer = true or IsHepatitic = true or IsKedneyDefect = true or IsBoneDefect = true or IsBloodDefect = true or IsHormonalDefect = true or IsAsthma = true or IsAids = true or IsCongenital = true or Other = true", TargetItems = "Explanation", Visibility = ViewItemVisibility.Show, AppearanceItemType = "ViewItem")]
+    [Appearance("HideExplanation", "IsHospitalized = false and IsDiabetic = false and IsCancer = false and IsHepatitic = false and IsKedneyDefect = false and IsBoneDefect = false and IsBloodDefect = false and IsHormonalDefect = false and IsAsthma = false and IsAids = false and IsCongenital = false and Other = false", TargetItems = "Explanation", Visibility = ViewItemVisibility.Hide, AppearanceItemType = "ViewItem")]
+    [ModelDefault("Caption", "Insurance Application")]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
@@ -70,6 +70,9 @@ namespace LifeLibrary.BusinessObjects.Underwriting
 
         [ModelDefault("Caption", "Full Name")]
         public string PolicyHolderName { get; set; }
+        [ModelDefault("Caption", "Gender")]
+        [VisibleInListView(false)]
+        public Gender PolicyHolderGender { get; set; }
         [ModelDefault("Caption", "Birth Date")]
         [VisibleInListView(false)]
         public DateTime PolicyHolderBirthDate { get; set; }
@@ -95,14 +98,21 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         public string PolicyHolderAddress { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Country")]
+        [ImmediatePostData]
         public CommonLibrary.BusinessObjects.Areas.Country PolicyHolderCountry { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData]
+        [DataSourceProperty("PolicyHolderCountry.Provinces")]
         [ModelDefault("Caption", "State/Province")]
         public Province PolicyHolderProvince { get; set; }
+        [ImmediatePostData]
         [VisibleInListView(false)]
+        [DataSourceProperty("PolicyHolderProvince.Districts")]
         [ModelDefault("Caption", "District/Regency")]
         public District PolicyHolderDistrict { get; set; }
+        [ImmediatePostData]
         [VisibleInListView(false)]
+        [DataSourceProperty("PolicyHolderDistrict.SubDistricts")]
         [ModelDefault("Caption", "Sub District")]
         public SubDistrict PolicyHolderSubDistrict { get; set; }
         [VisibleInListView(false)]
@@ -118,15 +128,21 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         public string PolicyHolderMailingAddress { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Country")]
+        [ImmediatePostData]
         public CommonLibrary.BusinessObjects.Areas.Country PolicyHolderMailingCountry { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData]
+        [DataSourceProperty("PolicyHolderMailingCountry.Provinces")]
         [ModelDefault("Caption", "State/Province")]
         public Province PolicyHolderMailingProvince { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData]
+        [DataSourceProperty("PolicyHolderMailingProvince.Districts")]
         [ModelDefault("Caption", "District/Regency")]
         public District PolicyHolderMailingDistrict { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Sub District")]
+        [DataSourceProperty("PolicyHolderMailingDistrict.SubDistricts")]
         public SubDistrict PolicyHolderMailingSubDistrict { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Postal Code")]
@@ -156,14 +172,21 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         public string PolicyHolderCompanyAddress { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Country")]
+        [ImmediatePostData]
         public CommonLibrary.BusinessObjects.Areas.Country PolicyHolderCompanyCountry { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "State/Province")]
+        [ImmediatePostData]
+        [DataSourceProperty("PolicyHolderCompanyCountry.Provinces")]
         public Province PolicyHolderCompanyProvince { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData]
+        [DataSourceProperty("PolicyHolderCompanyProvince.Districts")]
         [ModelDefault("Caption", "District/Regency")]
         public District PolicyHolderCompanyDistrict { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData]
+        [DataSourceProperty("PolicyHolderCompanyDistrict.SubDistricts")]
         [ModelDefault("Caption", "Sub District")]
         public SubDistrict PolicyHolderCompanySubDistrict { get; set; }
         [VisibleInListView(false)]
@@ -171,19 +194,29 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         public string PolicyHolderCompanyPostalCode { get; set; }
 
         [VisibleInListView(false)]
+        [ModelDefault("DisplayFormat", "{0:#.## CM}")]
         [ModelDefault("Caption", "Height")]
+        [ModelDefault("EditMaskType", "Simple")]
+        [ModelDefault("EditMask", "n")]
         public decimal PolicyHolderHeight { get; set; }
         [VisibleInListView(false)]
+        [ModelDefault("DisplayFormat", "{0:#.## KG}")]
         [ModelDefault("Caption", "Weight")]
+        [ModelDefault("EditMaskType", "Simple")]
+        [ModelDefault("EditMask", "n")]
         public decimal PolicyHolderWeight { get; set; }
 
         [ModelDefault("Caption", "Policy Holder is not Insured")]
         [ImmediatePostData]
+        [VisibleInListView(false)]
         public bool IsNotInsured { get; set; }
 
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Full Name")]
         public string InsuredName { get; set; }
+        [ModelDefault("Caption", "Gender")]
+        [VisibleInListView(false)]
+        public Gender InsuredGender { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Birth Date")]
         public DateTime InsuredBirthDate { get; set; }
@@ -208,14 +241,21 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         public string InsuredAddress { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Country")]
+        [ImmediatePostData]
         public CommonLibrary.BusinessObjects.Areas.Country InsuredCountry { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData]
+        [DataSourceProperty("InsuredCountry.Provinces")]
         [ModelDefault("Caption", "State/Province")]
         public Province InsuredProvince { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData]
+        [DataSourceProperty("InsuredProvince.Districts")]
         [ModelDefault("Caption", "District/Regency")]
         public District InsuredDistrict { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData]
+        [DataSourceProperty("InsuredDistrict.SubDistricts")]
         [ModelDefault("Caption", "Sub District")]
         public SubDistrict InsuredSubDistrict { get; set; }
         [VisibleInListView(false)]
@@ -231,14 +271,21 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         public string InsuredMailingAddress { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Country")]
+        [ImmediatePostData]
         public CommonLibrary.BusinessObjects.Areas.Country InsuredMailingCountry { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "State/Province")]
+        [ImmediatePostData]
+        [DataSourceProperty("InsuredMailingCountry.Provinces")]
         public Province InsuredMailingProvince { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "District/Regency")]
+        [ImmediatePostData]
+        [DataSourceProperty("InsuredMailingProvince.Districts")]
         public District InsuredMailingDistrict { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData]
+        [DataSourceProperty("InsuredMailingDistrict.SubDistricts")]
         [ModelDefault("Caption", "Sub-District")]
         public SubDistrict InsuredMailingSubDistrict { get; set; }
         [VisibleInListView(false)]
@@ -269,15 +316,22 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         public string InsuredCompanyAddress { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Country")]
+        [ImmediatePostData]
         public CommonLibrary.BusinessObjects.Areas.Country InsuredCompanyCountry { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData]
+        [DataSourceProperty("InsuredCompanyCountry.Provinces")]
         [ModelDefault("Caption", "State/Province")]
         public Province InsuredCompanyProvince { get; set; }
         [VisibleInListView(false)]
+        [ImmediatePostData]
+        [DataSourceProperty("InsuredCompanyProvince.Districts")]
         [ModelDefault("Caption", "District/Regency")]
         public District InsuredCompanyDistrict { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Sub District")]
+        [ImmediatePostData]
+        [DataSourceProperty("InsuredCompanyDistrict.SubDistricts")]
         public SubDistrict InsuredCompanySubDistrict { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Postal Code")]
@@ -285,9 +339,15 @@ namespace LifeLibrary.BusinessObjects.Underwriting
 
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Height")]
+        [ModelDefault("DisplayFormat", "{0:#.## CM}")]
+        [ModelDefault("EditMaskType", "Simple")]
+        [ModelDefault("EditMask", "n")]
         public decimal InsuredHeight { get; set; }
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Weight")]
+        [ModelDefault("DisplayFormat", "{0:#.## KG}")]
+        [ModelDefault("EditMaskType", "Simple")]
+        [ModelDefault("EditMask","n")]
         public decimal InsuredWeight { get; set; }
 
         [VisibleInListView(false)]
@@ -295,6 +355,7 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         [VisibleInListView(false)]
         [ModelDefault("Caption", "Other")]
         public string OtherRelationship { get; set; }
+
         #region Desease
         [VisibleInListView(false)]
         [ImmediatePostData(true)]
@@ -348,6 +409,15 @@ namespace LifeLibrary.BusinessObjects.Underwriting
             get
             {
                 return GetCollection<Beneficiary>("Beneficiaries");
+            }
+        }
+
+        [Association("LifeInsuranceRequestForm-Attachments"), DevExpress.Xpo.Aggregated]
+        public XPCollection<RequestFormAttachment> Attachments
+        {
+            get
+            {
+                return GetCollection<RequestFormAttachment>("Attachments");
             }
         }
     }

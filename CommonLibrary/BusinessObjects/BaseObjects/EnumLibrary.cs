@@ -85,5 +85,15 @@ namespace CommonLibrary.BusinessObjects.BaseObjects
             Yes,
             No
         }
+
+        public enum RequestFormAttachmentType
+        {
+            KTP,
+            SIM,
+            KK,
+            MedicalCheckUp,
+            SignedForm,
+            Other
+        }
     }
 }

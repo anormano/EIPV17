@@ -6,16 +6,174 @@
   <Views>
     <DetailView Id="LifeInsuranceRequestForm_DetailView">
       <Layout>
-        <LayoutGroup Id="Main">
-          <LayoutGroup Id="SimpleEditors">
-            <LayoutGroup Id="LifeInsuranceRequestForm" Caption="General">
-              <LayoutGroup Id="LifeInsuranceRequestForm_col1">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="Product Information" VerticalAlign="NotSet" Direction="Horizontal" Index="0" ShowCaption="True" RelativeSize="9.3830334190231355" ImageName="BO_Product" IsNewNode="True">
+            <LayoutGroup Id="GeneralCol1" ShowCaption="False" Index="0" RelativeSize="50" IsNewNode="True">
+              <LayoutItem Id="FormNumber" Index="0" ViewItem="FormNumber" ShowCaption="" RelativeSize="28.571428571428573" IsNewNode="True" />
+              <LayoutItem Id="Product" ViewItem="Product" ShowCaption="" Index="1" RelativeSize="21.428571428571427" IsNewNode="True" />
+              <LayoutItem Id="SumInsured" ViewItem="SumInsured" ShowCaption="" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
+              <LayoutItem Id="InvestmentAllocation" ViewItem="InvestmentAllocation" ShowCaption="" Index="3" RelativeSize="28.571428571428573" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="GeneralCol2" ShowCaption="False" Index="1" RelativeSize="50" IsNewNode="True">
+              <LayoutItem Id="Agent" ViewItem="Agent" ShowCaption="" Index="0" RelativeSize="28.571428571428573" IsNewNode="True" />
+              <LayoutItem Id="Status" ViewItem="Status" ShowCaption="" Index="1" RelativeSize="71.428571428571431" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Policy Holder Information" Index="1" ShowCaption="True" RelativeSize="35.796915167095115" ImageName="BO_Contract" IsNewNode="True">
+            <LayoutGroup Id="PolicyHolderRow1" Direction="Vertical" Index="0" ShowCaption="False" RelativeSize="54.613935969868173" IsNewNode="True">
+              <LayoutGroup Id="Auto2f89e788-4c1e-4e85-8d72-d74de584b837" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="96.551724137931032" IsNewNode="True">
+                <LayoutGroup Id="General Information" ShowCaption="True" Index="0" RelativeSize="50" ImageName="BO_MyDetails" IsNewNode="True">
+                  <LayoutItem Id="PolicyHolderName" ViewItem="PolicyHolderName" Index="0" RelativeSize="13.008130081300813" IsNewNode="True" />
+                  <LayoutGroup Id="@dde2aadc-7369-4aba-bf41-9a323aa3b4d5" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="13.414634146341463" IsNewNode="True">
+                    <LayoutItem Id="PolicyHolderIdentityType" ViewItem="PolicyHolderIdentityType" Index="0" RelativeSize="49.907578558225509" IsNewNode="True" />
+                    <LayoutItem Id="PolicyHolderIdentityNumber" ViewItem="PolicyHolderIdentityNumber" Index="1" RelativeSize="50.092421441774491" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="@032d7f0c-633e-4004-999c-f5603c857da9" ShowCaption="False" Direction="Horizontal" Index="2" RelativeSize="13.414634146341463" IsNewNode="True">
+                    <LayoutItem Id="PolicyHolderBirthPlace" ViewItem="PolicyHolderBirthPlace" Index="0" RelativeSize="49.907578558225509" IsNewNode="True" />
+                    <LayoutItem Id="PolicyHolderBirthDate" ViewItem="PolicyHolderBirthDate" Index="1" RelativeSize="50.092421441774491" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="PolicyHolderGender" ViewItem="PolicyHolderGender" Index="3" RelativeSize="9.75609756097561" IsNewNode="True" />
+                  <LayoutItem Id="PolicyHolderReligion" ViewItem="PolicyHolderReligion" Index="4" RelativeSize="9.75609756097561" IsNewNode="True" />
+                  <LayoutItem Id="PolicyHolderHandphone" ViewItem="PolicyHolderHandphone" Index="5" RelativeSize="9.75609756097561" IsNewNode="True" />
+                  <LayoutItem Id="PolicyHolderEmail" ViewItem="PolicyHolderEmail" Index="6" RelativeSize="9.75609756097561" IsNewNode="True" />
+                  <LayoutGroup Id="@028c5ad8-f43b-4b8c-be6f-e082fe9d0022" ShowCaption="False" Direction="Horizontal" Index="7" RelativeSize="21.13821138211382" IsNewNode="True">
+                    <LayoutItem Id="PolicyHolderHeight" ViewItem="PolicyHolderHeight" Index="0" RelativeSize="49.907578558225509" IsNewNode="True" />
+                    <LayoutItem Id="PolicyHolderWeight" ViewItem="PolicyHolderWeight" Index="1" RelativeSize="50.092421441774491" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Occupation" ShowCaption="True" Index="1" RelativeSize="50" ImageName="BO_Customer" IsNewNode="True">
+                  <LayoutItem Id="PolicyHolderOccupation" ViewItem="PolicyHolderOccupation" Index="0" RelativeSize="13.008130081300813" IsNewNode="True" />
+                  <LayoutItem Id="PolicyHolderPosition" ViewItem="PolicyHolderPosition" Index="1" RelativeSize="9.75609756097561" IsNewNode="True" />
+                  <LayoutItem Id="PolicyHolderCompany" ViewItem="PolicyHolderCompany" Index="2" RelativeSize="9.75609756097561" IsNewNode="True" />
+                  <LayoutItem Id="PolicyHolderCompanyAddress" ViewItem="PolicyHolderCompanyAddress" Index="3" RelativeSize="15.447154471544716" IsNewNode="True" />
+                  <LayoutItem Id="PolicyHolderCompanyCountry" ViewItem="PolicyHolderCompanyCountry" Index="4" RelativeSize="9.75609756097561" IsNewNode="True" />
+                  <LayoutItem Id="PolicyHolderCompanyProvince" ViewItem="PolicyHolderCompanyProvince" Index="5" RelativeSize="9.75609756097561" IsNewNode="True" />
+                  <LayoutItem Id="PolicyHolderCompanyDistrict" ViewItem="PolicyHolderCompanyDistrict" Index="6" RelativeSize="9.75609756097561" IsNewNode="True" />
+                  <LayoutItem Id="PolicyHolderCompanySubDistrict" ViewItem="PolicyHolderCompanySubDistrict" Index="7" RelativeSize="9.75609756097561" IsNewNode="True" />
+                  <LayoutItem Id="PolicyHolderCompanyPostalCode" ViewItem="PolicyHolderCompanyPostalCode" Index="8" RelativeSize="13.008130081300813" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Item2" Index="1" RelativeSize="3.4482758620689653" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="PolicyHolderRow2" Index="1" Direction="Horizontal" ShowCaption="False" RelativeSize="38.794726930320152" IsNewNode="True">
+              <LayoutGroup Id="Identity Address" ShowCaption="True" Index="0" RelativeSize="50" ImageName="BO_Address" IsNewNode="True">
+                <LayoutItem Id="PolicyHolderAddress" ViewItem="PolicyHolderAddress" ShowCaption="" Index="0" RelativeSize="26.436781609195403" IsNewNode="True" />
+                <LayoutItem Id="PolicyHolderCountry" ViewItem="PolicyHolderCountry" ShowCaption="" Index="1" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="PolicyHolderProvince" ViewItem="PolicyHolderProvince" ShowCaption="" Index="2" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="PolicyHolderDistrict" ViewItem="PolicyHolderDistrict" ShowCaption="" Index="3" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="PolicyHolderSubDistrict" ViewItem="PolicyHolderSubDistrict" ShowCaption="" Index="4" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="PolicyHolderPostalCode" ViewItem="PolicyHolderPostalCode" ShowCaption="" Index="5" RelativeSize="18.390804597701148" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Mailing Address" ShowCaption="True" Index="1" RelativeSize="50" ImageName="BO_Contact" IsNewNode="True">
+                <LayoutItem Id="PolicyHolderMailingAddress" ViewItem="PolicyHolderMailingAddress" ShowCaption="" Index="0" RelativeSize="26.436781609195403" IsNewNode="True" />
+                <LayoutItem Id="PolicyHolderMailingCountry" ViewItem="PolicyHolderMailingCountry" ShowCaption="" Index="1" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="PolicyHolderMailingProvince" ViewItem="PolicyHolderMailingProvince" ShowCaption="" Index="2" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="PolicyHolderMailingDistrict" ViewItem="PolicyHolderMailingDistrict" ShowCaption="" Index="3" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="PolicyHolderMailingSubDistrict" ViewItem="PolicyHolderMailingSubDistrict" ShowCaption="" Index="4" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="PolicyHolderMailingPostalCode" ViewItem="PolicyHolderMailingPostalCode" ShowCaption="" Index="5" RelativeSize="18.390804597701148" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="PolicyHolderRow3" Index="2" ShowCaption="False" RelativeSize="6.5913370998116765" IsNewNode="True">
+              <LayoutItem Id="IsNotInsured" ViewItem="IsNotInsured" ShowCaption="" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="InsuredGroup" Index="2" ShowCaption="True" RelativeSize="34.897172236503856" Caption="Insured Information" ImageName="BO_Person" IsNewNode="True">
+            <LayoutGroup Id="InsuredRow1" Direction="Vertical" ShowCaption="False" Index="0" RelativeSize="59.187620889748551" IsNewNode="True">
+              <LayoutGroup Id="Auto8fbe6877-3d94-4a12-a64d-3f34fe1f53a4" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="96.732026143790847" IsNewNode="True">
+                <LayoutGroup Id="General Information" ShowCaption="True" Index="0" RelativeSize="50" ImageName="BO_MyDetails" IsNewNode="True">
+                  <LayoutGroup Id="@41040182-1dd0-452f-b639-c3bf910f2e57" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="14.50381679389313" IsNewNode="True">
+                    <LayoutItem Id="Relationship" ViewItem="Relationship" Index="0" RelativeSize="49.907578558225509" IsNewNode="True" />
+                    <LayoutItem Id="OtherRelationship" ViewItem="OtherRelationship" Index="1" RelativeSize="50.092421441774491" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="InsuredName" ViewItem="InsuredName" Index="1" RelativeSize="9.16030534351145" IsNewNode="True" />
+                  <LayoutGroup Id="@399cc372-2de7-4154-9e88-d0f13e4ddcda" ShowCaption="False" Direction="Horizontal" Index="2" RelativeSize="12.595419847328245" IsNewNode="True">
+                    <LayoutItem Id="InsuredIdentityType" ViewItem="InsuredIdentityType" Index="0" RelativeSize="49.907578558225509" IsNewNode="True" />
+                    <LayoutItem Id="InsuredIdentityNumber" ViewItem="InsuredIdentityNumber" Index="1" RelativeSize="50.092421441774491" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="@abe3345a-af1a-4423-adc2-616214a51006" ShowCaption="False" Direction="Horizontal" Index="3" RelativeSize="12.595419847328245" IsNewNode="True">
+                    <LayoutItem Id="InsuredBirthPlace" ViewItem="InsuredBirthPlace" Index="0" RelativeSize="49.907578558225509" IsNewNode="True" />
+                    <LayoutItem Id="InsuredBirthDate" ViewItem="InsuredBirthDate" Index="1" RelativeSize="50.092421441774491" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="InsuredGender" ViewItem="InsuredGender" Index="4" RelativeSize="9.16030534351145" IsNewNode="True" />
+                  <LayoutItem Id="InsuredReligion" ViewItem="InsuredReligion" Index="5" RelativeSize="9.16030534351145" IsNewNode="True" />
+                  <LayoutItem Id="InsuredHandphone" ViewItem="InsuredHandphone" Index="6" RelativeSize="9.16030534351145" IsNewNode="True" />
+                  <LayoutItem Id="InsuredEmail" ViewItem="InsuredEmail" Index="7" RelativeSize="9.16030534351145" IsNewNode="True" />
+                  <LayoutGroup Id="@eb2b69d3-46b9-4425-9469-06ef5ed20868" ShowCaption="False" Direction="Horizontal" Index="8" RelativeSize="14.50381679389313" IsNewNode="True">
+                    <LayoutItem Id="InsuredHeight" ViewItem="InsuredHeight" Index="0" RelativeSize="49.907578558225509" IsNewNode="True" />
+                    <LayoutItem Id="InsuredWeight" ViewItem="InsuredWeight" Index="1" RelativeSize="50.092421441774491" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Occupation" ShowCaption="True" Index="1" RelativeSize="50" ImageName="BO_Customer" IsNewNode="True">
+                  <LayoutItem Id="InsuredOccupation" ViewItem="InsuredOccupation" Index="0" RelativeSize="12.213740458015268" IsNewNode="True" />
+                  <LayoutItem Id="InsuredPosition" ViewItem="InsuredPosition" Index="1" RelativeSize="9.16030534351145" IsNewNode="True" />
+                  <LayoutItem Id="InsuredCompany" ViewItem="InsuredCompany" Index="2" RelativeSize="9.16030534351145" IsNewNode="True" />
+                  <LayoutItem Id="InsuredCompanyAddress" ViewItem="InsuredCompanyAddress" Index="3" RelativeSize="20.610687022900763" IsNewNode="True" />
+                  <LayoutItem Id="InsuredCompanyCountry" ViewItem="InsuredCompanyCountry" Index="4" RelativeSize="9.16030534351145" IsNewNode="True" />
+                  <LayoutItem Id="InsuredCompanyProvince" ViewItem="InsuredCompanyProvince" Index="5" RelativeSize="9.16030534351145" IsNewNode="True" />
+                  <LayoutItem Id="InsuredCompanyDistrict" ViewItem="InsuredCompanyDistrict" Index="6" RelativeSize="9.16030534351145" IsNewNode="True" />
+                  <LayoutItem Id="InsuredCompanySubDistrict" ViewItem="InsuredCompanySubDistrict" Index="7" RelativeSize="9.16030534351145" IsNewNode="True" />
+                  <LayoutItem Id="InsuredCompanyPostalCode" ViewItem="InsuredCompanyPostalCode" Index="8" RelativeSize="12.213740458015268" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Item1" Index="1" RelativeSize="3.2679738562091503" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="InsuredRow2" Direction="Horizontal" ShowCaption="False" Index="1" RelativeSize="40.812379110251449" IsNewNode="True">
+              <LayoutGroup Id="Identity Address" ShowCaption="True" Index="0" RelativeSize="50" ImageName="BO_Address" IsNewNode="True">
+                <LayoutItem Id="InsuredAddress" ViewItem="InsuredAddress" ShowCaption="" Index="0" RelativeSize="26.436781609195403" IsNewNode="True" />
+                <LayoutItem Id="InsuredCountry" ViewItem="InsuredCountry" ShowCaption="" Index="1" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="InsuredProvince" ViewItem="InsuredProvince" ShowCaption="" Index="2" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="InsuredDistrict" ViewItem="InsuredDistrict" ShowCaption="" Index="3" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="InsuredSubDistrict" ViewItem="InsuredSubDistrict" ShowCaption="" Index="4" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="InsuredPostalCode" ViewItem="InsuredPostalCode" ShowCaption="" Index="5" RelativeSize="18.390804597701148" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Mailing Address" ShowCaption="True" Index="1" RelativeSize="50" ImageName="BO_Contact" IsNewNode="True">
+                <LayoutItem Id="InsuredMailingAddress" ViewItem="InsuredMailingAddress" ShowCaption="" Index="0" RelativeSize="26.436781609195403" IsNewNode="True" />
+                <LayoutItem Id="InsuredMailingCountry" ViewItem="InsuredMailingCountry" ShowCaption="" Index="1" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="InsuredMailingProvince" ViewItem="InsuredMailingProvince" ShowCaption="" Index="2" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="InsuredMailingDistrict" ViewItem="InsuredMailingDistrict" ShowCaption="" Index="3" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="InsuredMailingSubDistrict" ViewItem="InsuredMailingSubDistrict" ShowCaption="" Index="4" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="InsuredMailingPostalCode" ViewItem="InsuredMailingPostalCode" ShowCaption="" Index="5" RelativeSize="18.390804597701148" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Pre-Existing Condition" Index="3" Direction="Vertical" ShowCaption="True" RelativeSize="12.275064267352185" ImageName="BO_Report" IsNewNode="True">
+            <LayoutGroup Id="@54ff88e6-6615-4be1-a325-35b0b176dc55" Direction="Horizontal" ShowCaption="False" Index="0" RelativeSize="70.3030303030303" IsNewNode="True">
+              <LayoutGroup Id="Col1" ShowCaption="False" Index="0" RelativeSize="33.303571428571431" IsNewNode="True">
+                <LayoutItem Id="IsHospitalized" ViewItem="IsHospitalized" ShowCaption="" Index="0" RelativeSize="27.586206896551722" IsNewNode="True" />
+                <LayoutItem Id="IsDiabetic" ViewItem="IsDiabetic" ShowCaption="" Index="1" RelativeSize="20.689655172413794" IsNewNode="True" />
+                <LayoutItem Id="IsCancer" ViewItem="IsCancer" ShowCaption="" Index="2" RelativeSize="20.689655172413794" IsNewNode="True" />
+                <LayoutItem Id="IsHepatitic" ViewItem="IsHepatitic" ShowCaption="" Index="3" RelativeSize="31.03448275862069" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Col2" ShowCaption="False" Index="1" RelativeSize="30.714285714285715" IsNewNode="True">
+                <LayoutItem Id="IsKedneyDefect" ViewItem="IsKedneyDefect" ShowCaption="" Index="0" RelativeSize="27.586206896551722" IsNewNode="True" />
+                <LayoutItem Id="IsBoneDefect" ViewItem="IsBoneDefect" ShowCaption="" Index="1" RelativeSize="20.689655172413794" IsNewNode="True" />
+                <LayoutItem Id="IsBloodDefect" ViewItem="IsBloodDefect" ShowCaption="" Index="2" RelativeSize="20.689655172413794" IsNewNode="True" />
+                <LayoutItem Id="IsHormonalDefect" ViewItem="IsHormonalDefect" ShowCaption="" Index="3" RelativeSize="31.03448275862069" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Col3" ShowCaption="False" Index="2" RelativeSize="35.982142857142854" IsNewNode="True">
+                <LayoutItem Id="IsAsthma" ViewItem="IsAsthma" ShowCaption="" Index="0" RelativeSize="27.586206896551722" IsNewNode="True" />
+                <LayoutItem Id="IsAids" ViewItem="IsAids" ShowCaption="" Index="1" RelativeSize="20.689655172413794" IsNewNode="True" />
+                <LayoutItem Id="IsCongenital" ViewItem="IsCongenital" ShowCaption="" Index="2" RelativeSize="20.689655172413794" IsNewNode="True" />
+                <LayoutGroup Id="@dd5e734e-8c17-4836-9500-324a2cb58e9e" Direction="Horizontal" ShowCaption="False" Index="3" RelativeSize="31.03448275862069" IsNewNode="True">
+                  <LayoutItem Id="Other" ViewItem="Other" ShowCaption="" Index="0" RelativeSize="49.379652605459057" IsNewNode="True" />
+                  <LayoutItem Id="OtherEntry" ViewItem="OtherEntry" ShowCaption="" Index="1" RelativeSize="50.620347394540943" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="@63348d65-d3dc-483e-bbb3-e4b2e6f6a03e" Direction="Vertical" ShowCaption="False" Index="1" RelativeSize="29.696969696969695" IsNewNode="True">
+              <LayoutItem Id="Explanation" ViewItem="Explanation" ShowCaption="" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors" Index="3" Removed="True">
+            <LayoutGroup Id="LifeInsuranceRequestForm">
+              <LayoutGroup Id="LifeInsuranceRequestForm_col1" Removed="True">
                 <LayoutItem Id="Agent" Removed="True" />
+                <LayoutItem Id="FormNumber" Removed="True" />
                 <LayoutItem Id="InsuredBirthDate" Removed="True" />
                 <LayoutItem Id="InsuredBirthPlace" Removed="True" />
-                <LayoutItem Id="InsuredIdentityNumber" Removed="True" />
+                <LayoutItem Id="InsuredGender" Removed="True" />
                 <LayoutItem Id="InsuredName" Removed="True" />
-                <LayoutItem Id="InsuredReligion" Removed="True" />
+                <LayoutItem Id="InvestmentAllocation" Removed="True" />
                 <LayoutItem Id="IsNotInsured" Removed="True" />
                 <LayoutItem Id="PolicyHolderBirthDate" Removed="True" />
                 <LayoutItem Id="PolicyHolderBirthPlace" Removed="True" />
@@ -28,6 +186,7 @@
                 <LayoutItem Id="PolicyHolderCountry" Removed="True" />
                 <LayoutItem Id="PolicyHolderDistrict" Removed="True" />
                 <LayoutItem Id="PolicyHolderEmail" Removed="True" />
+                <LayoutItem Id="PolicyHolderGender" Removed="True" />
                 <LayoutItem Id="PolicyHolderHandphone" Removed="True" />
                 <LayoutItem Id="PolicyHolderHeight" Removed="True" />
                 <LayoutItem Id="PolicyHolderIdentityNumber" Removed="True" />
@@ -45,11 +204,11 @@
                 <LayoutItem Id="PolicyHolderReligion" Removed="True" />
                 <LayoutItem Id="PolicyHolderSubDistrict" Removed="True" />
                 <LayoutItem Id="PolicyHolderWeight" Removed="True" />
+                <LayoutItem Id="Product" Removed="True" />
                 <LayoutItem Id="Status" Removed="True" />
+                <LayoutItem Id="SumInsured" Removed="True" />
               </LayoutGroup>
               <LayoutGroup Id="LifeInsuranceRequestForm_col2">
-                <LayoutItem Id="Agent" ViewItem="Agent" ShowCaption="" Index="2" IsNewNode="True" />
-                <LayoutItem Id="Status" ViewItem="Status" ShowCaption="" Index="3" IsNewNode="True" />
                 <LayoutItem Id="InsuredCompany" Removed="True" />
                 <LayoutItem Id="InsuredCompanyCountry" Removed="True" />
                 <LayoutItem Id="InsuredCompanyDistrict" Removed="True" />
@@ -61,6 +220,7 @@
                 <LayoutItem Id="InsuredEmail" Removed="True" />
                 <LayoutItem Id="InsuredHandphone" Removed="True" />
                 <LayoutItem Id="InsuredHeight" Removed="True" />
+                <LayoutItem Id="InsuredIdentityNumber" Removed="True" />
                 <LayoutItem Id="InsuredIdentityType" Removed="True" />
                 <LayoutItem Id="InsuredMailingCountry" Removed="True" />
                 <LayoutItem Id="InsuredMailingDistrict" Removed="True" />
@@ -71,6 +231,7 @@
                 <LayoutItem Id="InsuredPosition" Removed="True" />
                 <LayoutItem Id="InsuredPostalCode" Removed="True" />
                 <LayoutItem Id="InsuredProvince" Removed="True" />
+                <LayoutItem Id="InsuredReligion" Removed="True" />
                 <LayoutItem Id="InsuredSubDistrict" Removed="True" />
                 <LayoutItem Id="InsuredWeight" Removed="True" />
                 <LayoutItem Id="IsAids" Removed="True" />
@@ -90,131 +251,8 @@
                 <LayoutItem Id="Relationship" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
-            <LayoutGroup Id="PolicyHolder" Index="1" Caption="Policy Holder" ShowCaption="True" Direction="Vertical" IsNewNode="True">
-              <LayoutGroup Id="PolicyHolderRow1" Index="0" Direction="Horizontal" IsNewNode="True">
-                <LayoutGroup Id="GeneralInformation" ShowCaption="True" IsNewNode="True">
-                  <LayoutItem Id="PolicyHolderName" ViewItem="PolicyHolderName" ShowCaption="" Index="4" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderBirthDate" ViewItem="PolicyHolderBirthDate" ShowCaption="" Index="5" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderBirthPlace" ViewItem="PolicyHolderBirthPlace" ShowCaption="" Index="6" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderReligion" ViewItem="PolicyHolderReligion" ShowCaption="" Index="7" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderIdentityType" ViewItem="PolicyHolderIdentityType" ShowCaption="" Index="8" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderIdentityNumber" ViewItem="PolicyHolderIdentityNumber" ShowCaption="" Index="9" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderHandphone" ViewItem="PolicyHolderHandphone" ShowCaption="" Index="20" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderEmail" ViewItem="PolicyHolderEmail" ShowCaption="" Index="21" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderHeight" ViewItem="PolicyHolderHeight" ShowCaption="" Index="30" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderWeight" ViewItem="PolicyHolderWeight" ShowCaption="" Index="31" IsNewNode="True" />
-                  <LayoutItem Id="IsNotInsured" ViewItem="IsNotInsured" ShowCaption="" Index="32" IsNewNode="True" />
-                </LayoutGroup>
-                <LayoutGroup Id="Occupation" ShowCaption="True" IsNewNode="True">
-                  <LayoutItem Id="PolicyHolderOccupation" ViewItem="PolicyHolderOccupation" ShowCaption="" Index="0" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderPosition" ViewItem="PolicyHolderPosition" ShowCaption="" Index="1" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderCompany" ViewItem="PolicyHolderCompany" ShowCaption="" Index="2" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderCompanyAddress" ViewItem="PolicyHolderCompanyAddress" ShowCaption="" Index="2" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderCompanyCountry" ViewItem="PolicyHolderCompanyCountry" ShowCaption="" Index="25" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderCompanyProvince" ViewItem="PolicyHolderCompanyProvince" ShowCaption="" Index="26" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderCompanyDistrict" ViewItem="PolicyHolderCompanyDistrict" ShowCaption="" Index="27" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderCompanySubDistrict" ViewItem="PolicyHolderCompanySubDistrict" ShowCaption="" Index="28" IsNewNode="True" />
-                  <LayoutItem Id="PolicyHolderCompanyPostalCode" ViewItem="PolicyHolderCompanyPostalCode" ShowCaption="" Index="29" IsNewNode="True" />
-                </LayoutGroup>
-              </LayoutGroup>
-              <LayoutGroup Id="PolicyHolderRow2" Index="1" IsNewNode="True">
-                <LayoutGroup Id="Address" Direction="Horizontal" IsNewNode="True">
-                  <LayoutGroup Id="Identity Address" ShowCaption="True" IsNewNode="True">
-                    <LayoutItem Id="PolicyHolderAddress" ViewItem="PolicyHolderAddress" ShowCaption="" Index="0" IsNewNode="True" />
-                    <LayoutItem Id="PolicyHolderCountry" ViewItem="PolicyHolderCountry" ShowCaption="" Index="10" IsNewNode="True" />
-                    <LayoutItem Id="PolicyHolderProvince" ViewItem="PolicyHolderProvince" ShowCaption="" Index="11" IsNewNode="True" />
-                    <LayoutItem Id="PolicyHolderDistrict" ViewItem="PolicyHolderDistrict" ShowCaption="" Index="12" IsNewNode="True" />
-                    <LayoutItem Id="PolicyHolderSubDistrict" ViewItem="PolicyHolderSubDistrict" ShowCaption="" Index="13" IsNewNode="True" />
-                    <LayoutItem Id="PolicyHolderPostalCode" ViewItem="PolicyHolderPostalCode" ShowCaption="" Index="14" IsNewNode="True" />
-                  </LayoutGroup>
-                  <LayoutGroup Id="MailingAddress" Caption="Mailing Address" ShowCaption="True" IsNewNode="True">
-                    <LayoutItem Id="PolicyHolderMailingAddress" ViewItem="PolicyHolderMailingAddress" ShowCaption="" Index="1" IsNewNode="True" />
-                    <LayoutItem Id="PolicyHolderMailingCountry" ViewItem="PolicyHolderMailingCountry" ShowCaption="" Index="15" IsNewNode="True" />
-                    <LayoutItem Id="PolicyHolderMailingProvince" ViewItem="PolicyHolderMailingProvince" ShowCaption="" Index="16" IsNewNode="True" />
-                    <LayoutItem Id="PolicyHolderMailingDistrict" ViewItem="PolicyHolderMailingDistrict" ShowCaption="" Index="17" IsNewNode="True" />
-                    <LayoutItem Id="PolicyHolderMailingSubDistrict" ViewItem="PolicyHolderMailingSubDistrict" ShowCaption="" Index="18" IsNewNode="True" />
-                    <LayoutItem Id="PolicyHolderMailingPostalCode" ViewItem="PolicyHolderMailingPostalCode" ShowCaption="" Index="19" IsNewNode="True" />
-                  </LayoutGroup>
-                </LayoutGroup>
-              </LayoutGroup>
-            </LayoutGroup>
-            <LayoutGroup Id="InsuredGroup" Index="2" ShowCaption="True" Caption="Insured" IsNewNode="True">
-              <LayoutGroup Id="InsuredRow1" Index="0" Direction="Horizontal" IsNewNode="True">
-                <LayoutGroup Id="GeneralInformation" Caption="General Information" Index="0" ShowCaption="True" IsNewNode="True">
-                  <LayoutItem Id="InsuredIdentityType" ViewItem="InsuredIdentityType" ShowCaption="" Index="0" IsNewNode="True" />
-                  <LayoutItem Id="InsuredHandphone" ViewItem="InsuredHandphone" ShowCaption="" Index="11" IsNewNode="True" />
-                  <LayoutItem Id="InsuredEmail" ViewItem="InsuredEmail" ShowCaption="" Index="12" IsNewNode="True" />
-                  <LayoutItem Id="InsuredHeight" ViewItem="InsuredHeight" ShowCaption="" Index="21" IsNewNode="True" />
-                  <LayoutItem Id="InsuredWeight" ViewItem="InsuredWeight" ShowCaption="" Index="22" IsNewNode="True" />
-                  <LayoutItem Id="Relationship" ViewItem="Relationship" ShowCaption="" Index="23" IsNewNode="True" />
-                  <LayoutItem Id="OtherRelationship" ViewItem="OtherRelationship" ShowCaption="" Index="24" IsNewNode="True" />
-                  <LayoutItem Id="InsuredName" ViewItem="InsuredName" ShowCaption="" Index="33" IsNewNode="True" />
-                  <LayoutItem Id="InsuredBirthDate" ViewItem="InsuredBirthDate" ShowCaption="" Index="34" IsNewNode="True" />
-                  <LayoutItem Id="InsuredBirthPlace" ViewItem="InsuredBirthPlace" ShowCaption="" Index="35" IsNewNode="True" />
-                  <LayoutItem Id="InsuredReligion" ViewItem="InsuredReligion" ShowCaption="" Index="36" IsNewNode="True" />
-                  <LayoutItem Id="InsuredIdentityNumber" ViewItem="InsuredIdentityNumber" ShowCaption="" Index="37" IsNewNode="True" />
-                </LayoutGroup>
-                <LayoutGroup Id="Occupation" Index="1" ShowCaption="True" IsNewNode="True">
-                  <LayoutItem Id="InsuredCompanyAddress" ViewItem="InsuredCompanyAddress" ShowCaption="" Index="5" IsNewNode="True" />
-                  <LayoutItem Id="InsuredOccupation" ViewItem="InsuredOccupation" ShowCaption="" Index="13" IsNewNode="True" />
-                  <LayoutItem Id="InsuredPosition" ViewItem="InsuredPosition" ShowCaption="" Index="14" IsNewNode="True" />
-                  <LayoutItem Id="InsuredCompany" ViewItem="InsuredCompany" ShowCaption="" Index="15" IsNewNode="True" />
-                  <LayoutItem Id="InsuredCompanyCountry" ViewItem="InsuredCompanyCountry" ShowCaption="" Index="16" IsNewNode="True" />
-                  <LayoutItem Id="InsuredCompanyProvince" ViewItem="InsuredCompanyProvince" ShowCaption="" Index="17" IsNewNode="True" />
-                  <LayoutItem Id="InsuredCompanyDistrict" ViewItem="InsuredCompanyDistrict" ShowCaption="" Index="18" IsNewNode="True" />
-                  <LayoutItem Id="InsuredCompanySubDistrict" ViewItem="InsuredCompanySubDistrict" ShowCaption="" Index="19" IsNewNode="True" />
-                  <LayoutItem Id="InsuredCompanyPostalCode" ViewItem="InsuredCompanyPostalCode" ShowCaption="" Index="20" IsNewNode="True" />
-                </LayoutGroup>
-              </LayoutGroup>
-              <LayoutGroup Id="InsuredRow2" Index="1" Direction="Horizontal" IsNewNode="True">
-                <LayoutGroup Id="IdentityAddress" Caption="Identity Address" ShowCaption="True" IsNewNode="True">
-                  <LayoutItem Id="InsuredAddress" ViewItem="InsuredAddress" ShowCaption="" Index="0" IsNewNode="True" />
-                  <LayoutItem Id="InsuredCountry" ViewItem="InsuredCountry" ShowCaption="" Index="1" IsNewNode="True" />
-                  <LayoutItem Id="InsuredProvince" ViewItem="InsuredProvince" ShowCaption="" Index="2" IsNewNode="True" />
-                  <LayoutItem Id="InsuredDistrict" ViewItem="InsuredDistrict" ShowCaption="" Index="3" IsNewNode="True" />
-                  <LayoutItem Id="InsuredSubDistrict" ViewItem="InsuredSubDistrict" ShowCaption="" Index="4" IsNewNode="True" />
-                  <LayoutItem Id="InsuredPostalCode" ViewItem="InsuredPostalCode" ShowCaption="" Index="5" IsNewNode="True" />
-                </LayoutGroup>
-                <LayoutGroup Id="MailingAddress" Caption="Mailing Address" ShowCaption="True" IsNewNode="True">
-                  <LayoutItem Id="InsuredMailingAddress" ViewItem="InsuredMailingAddress" ShowCaption="" Index="4" IsNewNode="True" />
-                  <LayoutItem Id="InsuredMailingCountry" ViewItem="InsuredMailingCountry" ShowCaption="" Index="6" IsNewNode="True" />
-                  <LayoutItem Id="InsuredMailingProvince" ViewItem="InsuredMailingProvince" ShowCaption="" Index="7" IsNewNode="True" />
-                  <LayoutItem Id="InsuredMailingDistrict" ViewItem="InsuredMailingDistrict" ShowCaption="" Index="8" IsNewNode="True" />
-                  <LayoutItem Id="InsuredMailingSubDistrict" ViewItem="InsuredMailingSubDistrict" ShowCaption="" Index="9" IsNewNode="True" />
-                  <LayoutItem Id="InsuredMailingPostalCode" ViewItem="InsuredMailingPostalCode" ShowCaption="" Index="10" IsNewNode="True" />
-                </LayoutGroup>
-              </LayoutGroup>
-            </LayoutGroup>
-            <LayoutGroup Id="Precondition" Index="3" ShowCaption="True" IsNewNode="True">
-              <LayoutGroup Id="Row1" Index="0" Direction="Horizontal" IsNewNode="True">
-                <LayoutGroup Id="Col1" Index="0" IsNewNode="True">
-                  <LayoutItem Id="IsHospitalized" ViewItem="IsHospitalized" ShowCaption="" Index="25" IsNewNode="True" />
-                  <LayoutItem Id="IsDiabetic" ViewItem="IsDiabetic" ShowCaption="" Index="26" IsNewNode="True" />
-                  <LayoutItem Id="IsCancer" ViewItem="IsCancer" ShowCaption="" Index="27" IsNewNode="True" />
-                  <LayoutItem Id="IsHepatitic" ViewItem="IsHepatitic" ShowCaption="" Index="28" IsNewNode="True" />
-                </LayoutGroup>
-                <LayoutGroup Id="Col2" Index="1" IsNewNode="True">
-                  <LayoutItem Id="IsKedneyDefect" ViewItem="IsKedneyDefect" ShowCaption="" Index="29" IsNewNode="True" />
-                  <LayoutItem Id="IsBoneDefect" ViewItem="IsBoneDefect" ShowCaption="" Index="30" IsNewNode="True" />
-                  <LayoutItem Id="IsBloodDefect" ViewItem="IsBloodDefect" ShowCaption="" Index="31" IsNewNode="True" />
-                  <LayoutItem Id="IsAids" ViewItem="IsAids" ShowCaption="" Index="34" IsNewNode="True" />
-                </LayoutGroup>
-                <LayoutGroup Id="Col3" Index="2" IsNewNode="True">
-                  <LayoutItem Id="IsHormonalDefect" ViewItem="IsHormonalDefect" ShowCaption="" Index="32" IsNewNode="True" />
-                  <LayoutItem Id="IsAsthma" ViewItem="IsAsthma" ShowCaption="" Index="33" IsNewNode="True" />
-                  <LayoutItem Id="IsCongenital" ViewItem="IsCongenital" ShowCaption="" Index="35" IsNewNode="True" />
-                  <LayoutItem Id="Other" ViewItem="Other" ShowCaption="" Index="36" IsNewNode="True" />
-                </LayoutGroup>
-              </LayoutGroup>
-              <LayoutGroup Id="Row2" Index="2" IsNewNode="True">
-                <LayoutItem Id="OtherEntry" ViewItem="OtherEntry" ShowCaption="" Index="2" IsNewNode="True" />
-              </LayoutGroup>
-              <LayoutGroup Id="Row3" IsNewNode="True">
-                <LayoutItem Id="Explanation" ViewItem="Explanation" ShowCaption="" Index="6" IsNewNode="True" />
-              </LayoutGroup>
-            </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="SizeableEditors">
+          <LayoutGroup Id="SizeableEditors" Index="4" Removed="True">
             <LayoutItem Id="Explanation" Removed="True" />
             <LayoutItem Id="InsuredAddress" Removed="True" />
             <LayoutItem Id="InsuredCompanyAddress" Removed="True" />
@@ -223,6 +261,14 @@
             <LayoutItem Id="PolicyHolderCompanyAddress" Removed="True" />
             <LayoutItem Id="PolicyHolderMailingAddress" Removed="True" />
           </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="4" RelativeSize="7.6478149100257067">
+            <LayoutGroup Id="Beneficiaries" RelativeSize="100">
+              <LayoutItem Id="Beneficiaries" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Attachments" RelativeSize="100">
+              <LayoutItem Id="Attachments" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>

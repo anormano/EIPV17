@@ -19,7 +19,7 @@ namespace LifeLibrary.BusinessObjects.Underwriting
     //[ImageName("BO_Contact")]
     [DefaultProperty("Name")]
     [NavigationItem(false)]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
+    [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Top)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     public class Beneficiary : BaseObject
@@ -55,8 +55,12 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; }
         public InsuredRelationship Relationship { get; set; }
+        [VisibleInListView(false)]
         public string OtherRelationship { get; set; }
         [ModelDefault("Caption", "% SI")]
+        [ModelDefault("DisplayFormat", "{0:n2} %")]
+        [ModelDefault("EditMaskType", "Simple")]
+        [ModelDefault("EditMask", "P2")]
         public decimal SumInsuredPercent { get; set; }
     }
 }

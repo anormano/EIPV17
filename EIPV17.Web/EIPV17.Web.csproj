@@ -25,6 +25,7 @@
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -315,6 +316,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomLogonTemplateContent.ascx" />
+    <Content Include="CustomVerticalTemplate.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="DefaultVerticalTemplateContent.ascx" />
     <Content Include="Error.aspx" />
@@ -329,6 +331,13 @@
     </Compile>
     <Compile Include="CustomLogonTemplateContent.ascx.designer.cs">
       <DependentUpon>CustomLogonTemplateContent.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomVerticalTemplate.ascx.cs">
+      <DependentUpon>CustomVerticalTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomVerticalTemplate.ascx.designer.cs">
+      <DependentUpon>CustomVerticalTemplate.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>

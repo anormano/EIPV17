@@ -18,6 +18,7 @@ namespace LifeLibrary.BusinessObjects.Reference
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
     [DefaultProperty("Name")]
+    [NavigationItem("Actuary")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).

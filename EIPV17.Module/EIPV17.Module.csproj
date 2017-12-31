@@ -283,9 +283,6 @@
     <None Include="FunctionalTests\config.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\BO_Map_16x16.png" />
-    <EmbeddedResource Include="Images\BO_Map_32x32.png" />
-    <EmbeddedResource Include="Images\BO_Map_48x48.png" />
     <None Include="Resources\SalesOverview.xml" />
     <None Include="Resources\ShippingProvinces.xml" />
     <None Include="UnusableNodes.xml">

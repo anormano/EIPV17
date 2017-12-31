@@ -44,7 +44,7 @@ namespace EIPV17.Web {
 						clientDataServer, securityClient);
 			};
 			//DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit();
-            WebApplication.Instance.Settings.DefaultVerticalTemplateContentPath = "DefaultVerticalTemplateContent.ascx";
+            WebApplication.Instance.Settings.DefaultVerticalTemplateContentPath = "CustomVerticalTemplate.ascx";
             WebApplication.Instance.Settings.LogonTemplateContentPath = "CustomLogonTemplateContent.ascx";
             //DefaultVerticalTemplateContent.ClearSizeLimit();
             WebApplication.Instance.SwitchToNewStyle();

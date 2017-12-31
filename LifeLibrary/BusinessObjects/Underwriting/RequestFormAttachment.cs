@@ -11,19 +11,21 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using static CommonLibrary.BusinessObjects.BaseObjects.EnumLibrary;
 
 namespace LifeLibrary.BusinessObjects.Underwriting
 {
     [DefaultClassOptions]
+    [FileAttachment("Attachment")]
     [NavigationItem(false)]
     //[ImageName("BO_Contact")]
-    [DefaultProperty("Name")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
+    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
+    [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Top)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class SumInsuredSpecification : BaseObject
+    public class RequestFormAttachment : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public SumInsuredSpecification(Session session)
+        public RequestFormAttachment(Session session)
             : base(session)
         {
         }
@@ -46,23 +48,10 @@ namespace LifeLibrary.BusinessObjects.Underwriting
         //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
         //    this.PersistentProperty = "Paid";
         //}
-
-        public string Name { get; set; }
-        [Association("Product-SumInsuredSpecifications")]
-        public Product Product { get; set; }
-        [VisibleInLookupListView(true)]
-        public decimal SumInsured { get; set; }
-        [VisibleInLookupListView(true)]
-        public decimal BasePremium { get; set; }
-        [VisibleInLookupListView(true)]
-        public decimal TopUpPremium { get; set; }
-        [VisibleInLookupListView(true)]
-        public decimal TotalPremium
-        {
-            get
-            {
-                return BasePremium + TopUpPremium;
-            }
-        }
+        [Association("LifeInsuranceRequestForm-Attachments")]
+        public LifeInsuranceRequestForm RequestForm { get; set; }
+        public RequestFormAttachmentType AttachmentType { get; set; }
+        public string Note { get; set; }
+        public FileData Attachment { get; set; }
     }
 }

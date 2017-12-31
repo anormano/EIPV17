@@ -22,7 +22,7 @@
       </Item>
     </Items>
   </NavigationItems>
-  <Options>
+  <Options LookupSmallCollectionItemCount="50">
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
