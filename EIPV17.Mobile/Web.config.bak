@@ -50,7 +50,10 @@
       <assemblies>
       </assemblies>
     </compilation>
-  </system.web>
+    <httpHandlers>
+      <add verb="*" path="Static*" type="DevExpress.ExpressApp.Mobile.StaticResourcesHttpHandler, DevExpress.ExpressApp.Mobile.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    </httpHandlers>
+  <machineKey validationKey="D360D5E908D53C31F646D23E22577BC89B88336268E5CB93E1EF957FBFAABCCAF3F3E0C41CCA58CDF8891DB7C299069AA900FE568B7509250A8D9104DEE42FED,IsolateApps" decryptionKey="2BA9CDA41D4E8BF516EAC84F99409B4EF1DDC549A46C9C33028FC8A4A0FDBB5F,IsolateApps" /></system.web>
   <system.serviceModel>
     <bindings>
       <webHttpBinding>
@@ -86,8 +89,8 @@
     <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
   </system.serviceModel>
   <system.webServer>
-    <validation validateIntegratedModeConfiguration="false"/>
-    <httpRedirect enabled="true" httpResponseStatus="Permanent" >
+    <validation validateIntegratedModeConfiguration="false" />
+    <httpRedirect enabled="true" httpResponseStatus="Permanent">
       <add wildcard="/" destination="Static" />
     </httpRedirect>
 	<handlers>
